@@ -1,0 +1,14 @@
+.DrinkCardItem {
+  display: flex;
+  flex-direction: row;
+}
+
+.DrinkCardContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.SlideshowContainer {
+  width: 85vw;
+  background-color: red;
+}

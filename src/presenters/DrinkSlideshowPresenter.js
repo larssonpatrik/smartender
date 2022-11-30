@@ -1,8 +1,10 @@
 import React from "react";
 import resolvePromise from "../resolvePromise";
 import { searchDrinkByName } from "../DrinkSource";
+import DrinkSlideshowView from "../views/DrinkSlideshowView";
+import promiseNoData from "../promiseNoData";
 
-export default function DrinkSlideshowPresenter(props) {
+export default function DrinkSlideshowPresenter() {
   const [promiseState] = React.useState({});
   const [, reRender] = React.useState();
 
@@ -13,5 +15,9 @@ export default function DrinkSlideshowPresenter(props) {
   React.useEffect(() => {
     resolvePromise(searchDrinkByName("vodka"), promiseState, notifyACB);
   }, []);
-  return <div>Hello world</div>;
+  return (
+    promiseNoData(promiseState) || (
+      <DrinkSlideshowView title="Popular drinks" data={promiseState.data} />
+    )
+  );
 }
