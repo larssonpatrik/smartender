@@ -1,6 +1,5 @@
 import { HeadingThree } from "./Headings";
 import "./css/DrinkCard.css";
-
 export function DrinkCard(props) {
   return (
     <div className="container">
