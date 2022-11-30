@@ -2,6 +2,13 @@ import { API_KEY } from "./APIConfig";
 
 // SEARCH FUNCTIONS
 export function searchAPICall(searchQuery) {
+  function throwError() {
+    throw new Error("Something went nuts! Try again!");
+  }
+  function treatHTTPResponseACB(resp) {
+    return resp.status === 200 ? resp.json() : throwError();
+  }
+
   let queryString = "?" + new URLSearchParams(searchQuery).toString();
 
   const options = {
@@ -12,23 +19,31 @@ export function searchAPICall(searchQuery) {
     },
   };
 
-  return fetch(
-    "https://the-cocktail-db.p.rapidapi.com/search.php" + queryString,
-    options
-  )
-    .then((response) => response.json())
-    .then((response) => {
-      console.log("SEARCH API", response);
-    })
-    .catch((err) => console.error(err));
+  return new Promise(async function createPromiseACB(resolve, reject) {
+    function resolvePromiseACB(res) {
+      resolve(res);
+    }
+
+    function rejectPromiseACB(err) {
+      reject(err);
+    }
+
+    return fetch(
+      "https://the-cocktail-db.p.rapidapi.com/search.php" + queryString,
+      options
+    )
+      .then(treatHTTPResponseACB)
+      .then(resolvePromiseACB)
+      .catch(rejectPromiseACB);
+  });
 }
 
 export function searchDrinkByName(searchQuery) {
-  searchAPICall({ s: searchQuery });
+  return searchAPICall({ s: searchQuery });
 }
 
 export function searchIngredientByName(searchQuery) {
-  searchAPICall({ i: searchQuery });
+  return searchAPICall({ i: searchQuery });
 }
 
 // FILTER FUNCTIONS
