@@ -1,19 +1,13 @@
-let props = {
-  drinks: [
-    { name: "drink 1", image: "image 1" },
-    { name: "drink 2", image: "image 2" },
-  ],
-};
-console.log(props);
-export default function drinkCollectionView(props) {
-  function render_drinkCB(drink) {
+export default function DrinkCollectionView(props) {
+  function render_drinkCB(drink, i) {
     return (
-      <div>
+      //Change img to img tag with drink prop "img"
+      <div key={i}>
         <div> {drink.image}</div>
         <div>{drink.name}</div>
       </div>
     );
   }
 
-  return <div>{props.map(render_drinkCB)}</div>;
+  return <div>{props.drinks.map(render_drinkCB)}</div>;
 }
