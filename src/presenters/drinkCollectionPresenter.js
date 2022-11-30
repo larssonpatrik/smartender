@@ -13,7 +13,7 @@ export default function DrinkCollectionPresenter(props) {
   }
 
   React.useEffect(() => {
-    resolvePromise(searchDrinkByName("vodka"), promiseState, notifyACB);
+    resolvePromise(searchDrinkByName(""), promiseState, notifyACB);
   }, []);
   //Here props will be used instead of placeholder "drinks" const later
   return (
