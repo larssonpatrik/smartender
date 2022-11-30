@@ -13,6 +13,7 @@ import promiseNoData from "./promiseNoData";
 import PaddanDevEnv from "./PaddDevEnv";
 import DrinkCollectionPresenter from "./presenters/DrinkCollectionPresenter";
 import DrinkDetailsPresenter from "./presenters/DrinkDetailsPresenter";
+import Spacer from "./components/Spacer";
 
 function App(props) {
   let testPromiseState = {};
@@ -25,7 +26,6 @@ function App(props) {
   return (
     <div>
       <DrinkCollectionPresenter />
-      <DrinkDetailsPresenter />
     </div>
   );
 }
