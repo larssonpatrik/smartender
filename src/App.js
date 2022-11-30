@@ -20,10 +20,11 @@ function App(props) {
   //filterDrinkByIngridient("Gin, Lime");
   //filterDrinkByCategory("classic");
   //filterIngredientByAlcoholic("non-alcoholic");
-  function testACB() {
-    resolvePromise(searchDrinkByName("vodka"), testPromiseState);
-    console.log(testPromiseState);
-  }
+
+  React.useEffect(() => {
+    resolvePromise(searchDrinkByName("gin"), promiseState, notifyACB);
+  }, []);
+
   return (
     <div>
       <DrinkCollectionPresenter />
