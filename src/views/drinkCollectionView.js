@@ -1,19 +1,20 @@
-let props = {
-  drinks: [
-    { name: "drink 1", image: "image 1" },
-    { name: "drink 2", image: "image 2" },
-  ],
-};
-console.log(props);
-export default function drinkCollectionView(props) {
-  function render_drinkCB(drink) {
+import React from "react";
+import { DrinkCard } from "../components/DrinkCard";
+import Spacer from "../components/Spacer";
+import "./DrinkCollectionView.css";
+
+export default function DrinkCollectionView(props) {
+  console.log(props);
+  function render_drinkCB(drink, i) {
     return (
-      <div>
-        <div> {drink.image}</div>
-        <div>{drink.name}</div>
+      <div className="CardContainer" key={i}>
+        <DrinkCard name={drink.strDrink} img={drink.strDrinkThumb} />
+        <Spacer size={2} />
       </div>
     );
   }
 
-  return <div>{props.map(render_drinkCB)}</div>;
+  return (
+    <div className="ResultsContainer">{props.drinks.map(render_drinkCB)}</div>
+  );
 }
