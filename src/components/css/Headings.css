@@ -11,4 +11,6 @@ h3 {
 }
 
 .HeadingThree {
+  color: whitesmoke;
+  -webkit-text-stroke: 1px black;
 }

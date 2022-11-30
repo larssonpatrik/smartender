@@ -1,9 +1,6 @@
 .CardContainer {
   display: flex;
   flex-direction: row;
-  border: 10px;
-  border-radius: 2px;
-  border-color: grey;
 }
 
 .ResultsContainer {
@@ -12,4 +9,5 @@
   width: 85vw;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items: center;
 }

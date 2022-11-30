@@ -14,6 +14,7 @@ import PaddanDevEnv from "./PaddDevEnv";
 import DrinkCollectionPresenter from "./presenters/DrinkCollectionPresenter";
 import DrinkDetailsPresenter from "./presenters/DrinkDetailsPresenter";
 import Spacer from "./components/Spacer";
+import "/";
 
 function App(props) {
   let testPromiseState = {};
@@ -24,7 +25,7 @@ function App(props) {
   //filterIngredientByAlcoholic("non-alcoholic");
 
   return (
-    <div>
+    <div className="content">
       <DrinkCollectionPresenter />
     </div>
   );
