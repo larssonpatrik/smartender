@@ -1,7 +1,7 @@
 .Options {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: baseline;
   align-content: space-around;
 }
@@ -10,4 +10,10 @@
   font-family: fantasy;
   font-size: 20px;
   font-weight: 400;
+}
+
+.Header {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
 }
