@@ -7,6 +7,7 @@ import {
   filterDrinkByCategory,
   filterIngredientByAlcoholic,
   listIngredients,
+  listAlcoholics,
 } from "./DrinkSource";
 import resolvePromise from "./resolvePromise";
 import promiseNoData from "./promiseNoData";
@@ -16,18 +17,7 @@ import DrinkDetailsPresenter from "./presenters/DrinkDetailsPresenter";
 import Spacer from "./components/Spacer";
 
 function App(props) {
-  let testPromiseState = {};
-  //listIngredients();
-  //searchDrinkByName("vodka");
-  //filterDrinkByIngridient("Gin, Lime");
-  //filterDrinkByCategory("classic");
-  //filterIngredientByAlcoholic("non-alcoholic");
-
-  return (
-    <div>
-      <DrinkCollectionPresenter />
-    </div>
-  );
+  return <div>Hello World!</div>;
 }
 
 export default App;
