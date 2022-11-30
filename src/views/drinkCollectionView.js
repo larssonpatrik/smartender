@@ -1,14 +1,20 @@
 import React from "react";
 import { DrinkCard } from "../components/DrinkCard";
+import Spacer from "../components/Spacer";
+import "./DrinkCollectionView.css";
+
 export default function DrinkCollectionView(props) {
   console.log(props);
   function render_drinkCB(drink, i) {
     return (
-      <React.Fragment key={i}>
+      <div className="CardContainer" key={i}>
         <DrinkCard name={drink.strDrink} img={drink.strDrinkThumb} />
-      </React.Fragment>
+        <Spacer size={2} />
+      </div>
     );
   }
 
-  return <div>{props.drinks.map(render_drinkCB)}</div>;
+  return (
+    <div className="ResultsContainer">{props.drinks.map(render_drinkCB)}</div>
+  );
 }
