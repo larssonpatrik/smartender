@@ -1,0 +1,13 @@
+.Options {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: baseline;
+  align-content: space-around;
+}
+
+.link {
+  font-family: fantasy;
+  font-size: 20px;
+  font-weight: 400;
+}

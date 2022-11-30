@@ -1,5 +1,6 @@
+import "../components/css/Headings.css";
 export function HeadingOne(props) {
-  <h1 className="HeadingOne"></h1>;
+  <h1 className="HeadingOne">{props.children}</h1>;
 }
 
 export function HeadingTwo(props) {
