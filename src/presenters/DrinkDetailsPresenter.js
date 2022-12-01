@@ -9,7 +9,6 @@ export default function DrinkDetailsPresenter(props) {
   const [promiseState] = React.useState({});
   const [, reRender] = React.useState();
 
-  
   function notifyACB() {
     reRender({});
   }
@@ -18,11 +17,11 @@ export default function DrinkDetailsPresenter(props) {
     resolvePromise(searchDrinkByName("Mojito Extra"), promiseState, notifyACB);
   }, []);
 
-return (
-  <div>
-    {promiseNoData(promiseState) || (
-    <DrinkDetailsView drinks={promiseState.data.drinks}/>
-    )}
-  </div>
-);
+  return (
+    <div>
+      {promiseNoData(promiseState) || (
+        <DrinkDetailsView drinks={promiseState.data.drinks} />
+      )}
+    </div>
+  );
 }

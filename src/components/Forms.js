@@ -1,10 +1,20 @@
 import "../components/css/Forms.css";
 
 export function SearchForm(props) {
+  function onInputChangeACB(event) {
+    props.onInputChange(event.target.value);
+  }
+
+  function onUserClickOnButtonACB() {
+    props.onSearch();
+  }
+
   return (
-    <div className="SearchForm">
-      <input className="SearchFormInput"></input>
-      <button className="SearchFormButton">Search</button>
+    <div className="SearchForm" onChange={onInputChangeACB}>
+      <input className="SearchFormInput" />
+      <button className="SearchFormButton" onClick={onUserClickOnButtonACB}>
+        Search
+      </button>
     </div>
   );
 }

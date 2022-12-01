@@ -1,6 +1,6 @@
 import React from "react";
 import "./SearchResultsView.css";
-import { DrinkCard } from "../components/DrinkCard";
+import DrinkCard from "../components/DrinkCard.js";
 import Spacer from "../components/Spacer";
 
 export default function SearchResultsView(props) {
