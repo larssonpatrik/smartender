@@ -1,10 +1,9 @@
 import React from "react";
-import "./drinkCollectionView.css";
+import "./SearchResultsView.css";
 import { DrinkCard } from "../components/DrinkCard";
 import Spacer from "../components/Spacer";
-export default function DrinkCollectionView(props) {
 
-  console.log('2', props.drinks[0].strDrink);
+export default function SearchResultsView(props) {
   function render_drinkCB(drink, i) {
     /*return (
       //Change img to img tag with drink prop "img"
@@ -18,10 +17,12 @@ export default function DrinkCollectionView(props) {
     return (
       <div className="drinkCardContainer">
         <DrinkCard name={drink.strDrink} img={drink.strDrinkThumb} />
-        <Spacer size={2}/>
+        <Spacer size={2} />
       </div>
-    )
+    );
   }
 
-  return <div className="resultContainer">{props.drinks.map(render_drinkCB)}</div>;
+  return (
+    <div className="resultContainer">{props.drinks.map(render_drinkCB)}</div>
+  );
 }

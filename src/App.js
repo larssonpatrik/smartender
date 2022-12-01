@@ -12,17 +12,17 @@ import {
 import resolvePromise from "./resolvePromise";
 import promiseNoData from "./promiseNoData";
 import PaddanDevEnv from "./PaddDevEnv";
-import DrinkCollectionPresenter from "./presenters/DrinkCollectionPresenter";
 import DrinkDetailsPresenter from "./presenters/DrinkDetailsPresenter";
 import Spacer from "./components/Spacer";
+import SearchResultsPresenter from "./presenters/SearchResultsPresenter";
 
 function App(props) {
-  return <div>
-    <DrinkCollectionPresenter/>
-    <DrinkDetailsPresenter/>
-  </div>;
-
-  
+  return (
+    <div>
+      <SearchResultsPresenter />
+      <DrinkDetailsPresenter />
+    </div>
+  );
 }
 
 export default App;
