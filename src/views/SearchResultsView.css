@@ -1,0 +1,11 @@
+.drinkCardContainer {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .resultContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    row-gap: 24px;
+  }

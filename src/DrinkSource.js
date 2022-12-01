@@ -149,3 +149,45 @@ export function listGlasses() {
 export function listAlcoholics() {
   return listAPICall({ a: "list" });
 }
+
+// LOOKUP FUNCTIONS
+export function lookUpAPICall(searchQuery) {
+  function throwError() {
+    throw new Error("Something went nuts! Try again!");
+  }
+  function treatHTTPResponseACB(resp) {
+    return resp.status === 200 ? resp.json() : throwError();
+  }
+
+  let queryString = "?" + new URLSearchParams(searchQuery).toString();
+
+  const options = {
+    method: "GET",
+    headers: {
+      "X-RapidAPI-Key": API_KEY,
+      "X-RapidAPI-Host": "the-cocktail-db.p.rapidapi.com",
+    },
+  };
+
+  return new Promise(async function createPromiseACB(resolve, reject) {
+    function resolvePromiseACB(res) {
+      resolve(res);
+    }
+
+    function rejectPromiseACB(err) {
+      reject(err);
+    }
+
+    return fetch(
+      "https://the-cocktail-db.p.rapidapi.com/lookup.php" + queryString,
+      options
+    )
+      .then(treatHTTPResponseACB)
+      .then(resolvePromiseACB)
+      .catch(rejectPromiseACB);
+  });
+}
+
+export function getDrinkById(id) {
+  return lookUpAPICall({ i: id });
+}
