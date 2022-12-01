@@ -1,11 +1,10 @@
 import DrinkCard from "../components/DrinkCard";
 import "./DrinkSlideshowView.css";
 import Spacer from "../components/Spacer";
-import { HeadingOne } from "../components/Headings";
+import { HeadingTwo } from "../components/Headings";
 
 export default function DrinkSlideshowView(props) {
   let drinkArray = props.data.drinks;
-  console.log(drinkArray);
 
   function renderDrinkCard(drink, i) {
     return (
@@ -17,8 +16,7 @@ export default function DrinkSlideshowView(props) {
   }
   return (
     <div className="SlideshowContainer">
-      <Spacer size={5} />
-      <HeadingOne>{props.title}</HeadingOne>
+      <HeadingTwo>{props.title}</HeadingTwo>
       <Spacer size={0} />
       <div className="DrinkCardContainer">
         {drinkArray.map(renderDrinkCard)};
