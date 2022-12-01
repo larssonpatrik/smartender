@@ -25,7 +25,8 @@ function App(props) {
 
   return (
     <div>
-      <DrinkCollectionPresenter />
+      <DrinkDetailsPresenter />
+     
     </div>
   );
 }

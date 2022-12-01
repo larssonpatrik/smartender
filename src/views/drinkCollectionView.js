@@ -1,7 +1,8 @@
 import React from "react";
 import { DrinkCard } from "../components/DrinkCard";
 export default function DrinkCollectionView(props) {
-  console.log(props);
+
+  console.log('2', props.drinks[0].strDrink);
   function render_drinkCB(drink, i) {
     return (
       //Change img to img tag with drink prop "img"

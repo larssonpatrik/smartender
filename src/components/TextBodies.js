@@ -1,11 +1,11 @@
 export function BodyOne(props) {
-  <body className="BodyOne"></body>;
+  return <p className="BodyOne">{props.children}</p>;
 }
 
 export function BodyTwo(props) {
-  <body className="BodyTwo"></body>;
+  return <p className="BodyTwo"></p>;
 }
 
 export function BodyThree(props) {
-  <body className="BodyThree"></body>;
+  return <p className="BodyThree"></p>;
 }

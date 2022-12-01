@@ -1,14 +1,20 @@
 h1,
 h2,
 h3 {
-  margin: 0;
+ 
 }
 
 .HeadingOne {
+  font-size: 32px;
+  font-weight: 800;
 }
 
 .HeadingTwo {
+  font-size: 26px;
+  font-weight: 700;
 }
 
 .HeadingThree {
+  font-size: 22px;
+  font-weight: 500;
 }
