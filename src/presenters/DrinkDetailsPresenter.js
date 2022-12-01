@@ -1,10 +1,27 @@
 import DrinkDetailsView from "../views/DrinkDetailsView";
+import promiseNoData from "../promiseNoData";
+
+import React from "react";
+import resolvePromise from "../resolvePromise";
+import { searchAPICall, searchDrinkByName } from "../DrinkSource";
 
 export default function DrinkDetailsPresenter(props) {
-  console.log("hejjjjjj", props);
+  const [promiseState] = React.useState({});
+  const [, reRender] = React.useState();
+
+  function notifyACB() {
+    reRender({});
+  }
+
+  React.useEffect(() => {
+    resolvePromise(searchDrinkByName("Mojito Extra"), promiseState, notifyACB);
+  }, []);
+
   return (
     <div>
-      <DrinkDetailsView />
+      {promiseNoData(promiseState) || (
+        <DrinkDetailsView drinks={promiseState.data.drinks} />
+      )}
     </div>
   );
 }

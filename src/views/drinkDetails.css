@@ -1,0 +1,28 @@
+body {
+    background-color: #1d1922;
+}
+
+.detailsContainer {
+    margin: 100px;
+    display: flex;
+    flex-direction: row;
+    border-style: solid;
+    border-color: white;
+    background-color: #9589a21d;
+    border-radius: 13px;
+  }
+  
+  .content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    color: white;
+  }
+
+  .drinkImg {
+    border-top-left-radius: 13px;
+    border-bottom-left-radius: 13px;
+  }
+
+  

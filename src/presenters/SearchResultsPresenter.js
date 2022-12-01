@@ -1,10 +1,10 @@
-import DrinkCollectionView from "../views/DrinkCollectionView";
+import SearchResultsView from "../views/SearchResultsView";
 import React from "react";
 import resolvePromise from "../resolvePromise";
-import { searchAPICall, searchDrinkByName } from "../DrinkSource";
+import { searchDrinkByName } from "../DrinkSource";
 import promiseNoData from "../promiseNoData";
 
-export default function DrinkCollectionPresenter(props) {
+export default function SearchResultsPresenter(props) {
   const [promiseState] = React.useState({});
   const [, reRender] = React.useState();
 
@@ -19,7 +19,7 @@ export default function DrinkCollectionPresenter(props) {
   return (
     <div>
       {promiseNoData(promiseState) || (
-        <DrinkCollectionView drinks={promiseState.data.drinks} />
+        <SearchResultsView drinks={promiseState.data.drinks} />
       )}
     </div>
   );
