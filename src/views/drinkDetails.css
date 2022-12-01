@@ -2,7 +2,7 @@ body {
     background-color: #1d1922;
 }
 
-.content {
+.detailsContainer {
     margin: 100px;
     display: flex;
     flex-direction: row;
@@ -11,7 +11,7 @@ body {
     background-color: #9589a21d;
   }
   
-  .theRest {
+  .content {
     text-align: center;
     display: flex;
     flex-direction: column;

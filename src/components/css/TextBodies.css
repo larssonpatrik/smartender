@@ -1,10 +1,12 @@
-.BodyOne {
+.Paragraph {
     font-size: 12px;
     font-weight: 200;
+    color: whitesmoke;
 }
 
-.BodyTwo {
+.METAText {
+    font-size: 12px;
+    font-weight: 200;
+    color: grey;
 }
 
-.BodyThree {
-}
