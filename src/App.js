@@ -11,16 +11,16 @@ import {
 } from "./DrinkSource";
 import resolvePromise from "./resolvePromise";
 import promiseNoData from "./promiseNoData";
+import PaddanDevEnv from "./PaddDevEnv";
+import DrinkDetailsPresenter from "./presenters/DrinkDetailsPresenter";
 import Spacer from "./components/Spacer";
-import Header from "./views/headerView";
-import { SearchForm } from "./components/Forms.js";
+import SearchResultsPresenter from "./presenters/SearchResultsPresenter";
 
 function App(props) {
   return (
     <div>
-      <Spacer size={16} />
-      <SearchForm />
-      <Spacer size={16} />
+      <SearchResultsPresenter />
+      <DrinkDetailsPresenter />
     </div>
   );
 }
