@@ -12,9 +12,9 @@ import {
 import resolvePromise from "./resolvePromise";
 import promiseNoData from "./promiseNoData";
 import PaddanDevEnv from "./PaddDevEnv";
-import DrinkDetailsPresenter from "./presenters/DrinkDetailsPresenter";
 import Spacer from "./components/Spacer";
 import SearchResultsPresenter from "./presenters/SearchResultsPresenter";
+import DrinkDetailsPresenter from "./presenters/DrinkDetailsPresenter";
 
 function App(props) {
   return (
