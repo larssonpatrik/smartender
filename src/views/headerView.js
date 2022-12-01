@@ -9,40 +9,37 @@ import {
 
 import "../views/Header.css";
 import "../components/css/Headings.css";
+import Spacer from "../components/Spacer";
 
 export default function Header(props) {
   return (
     <div className="Header">
-      <div>Logo</div>
+      <div>Logga</div>
       <div className="Options">
         <div>
-          <BiSearch />
-          <a className="link" herf="#">
+          <a className="link" href="#">
+            <BiSearch />
             Link 1
           </a>
         </div>
         <div>
-          <BiDrink />
           <a className="link" href="#">
-            Link 1
+            <BiDrink /> Link 1
           </a>
         </div>
         <div>
-          <BiBook />
           <a className="link" href="#">
-            Link 1
+            <BiBook /> Link 1
           </a>
         </div>
         <div>
-          <BiHeart />
           <a className="link" href="#">
-            Link 1
+            <BiHeart /> Link 1
           </a>
         </div>
         <div>
-          <BiShapePolygon />
           <a className="link" href="#">
-            Link 1
+            <BiShapePolygon /> Link 1
           </a>
         </div>
       </div>

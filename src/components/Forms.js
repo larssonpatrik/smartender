@@ -1,5 +1,12 @@
-export function FormOne(props) {
-  <form className="FormOne"></form>;
+import "../components/css/Forms.css";
+
+export function SearchForm(props) {
+  return (
+    <div className="SearchForm">
+      <input className="SearchFormInput"></input>
+      <button className="SearchFormButton">Search</button>
+    </div>
+  );
 }
 
 export function FormTwo(props) {

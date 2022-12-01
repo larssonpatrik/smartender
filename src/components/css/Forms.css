@@ -1,4 +1,18 @@
-.FormOne {
+.SearchFormInput {
+  width: 90%;
+  height: 60px;
+  font-size: 30px;
+}
+
+.SearchFormButton {
+  height: 65px;
+  font-size: 30px;
+}
+
+.SearchForm {
+  display: flex;
+  width: 90%;
+  justify-content: center;
 }
 
 .FormTwo {
