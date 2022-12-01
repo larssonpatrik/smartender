@@ -11,16 +11,14 @@ import {
 } from "./DrinkSource";
 import resolvePromise from "./resolvePromise";
 import promiseNoData from "./promiseNoData";
-import PaddanDevEnv from "./PaddDevEnv";
-import DrinkDetailsPresenter from "./presenters/DrinkDetailsPresenter";
 import Spacer from "./components/Spacer";
-import SearchResultsPresenter from "./presenters/SearchResultsPresenter";
+import Header from "./views/headerView";
+import { SearchForm } from "./components/Forms.js";
 
 function App(props) {
   return (
     <div>
-      <SearchResultsPresenter />
-      <DrinkDetailsPresenter />
+      <SearchForm />
     </div>
   );
 }
