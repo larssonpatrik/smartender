@@ -1,0 +1,22 @@
+.DrinkCardItem {
+  display: flex;
+  flex-direction: row;
+}
+
+.DrinkCardContainer {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  overflow-y: hidden;
+  /* Below hides scrollbars for IE, Edge and Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  padding: 10px 0;
+}
+
+.DrinkCardContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.SlideShowContainer {
+}

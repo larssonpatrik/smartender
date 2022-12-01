@@ -8,6 +8,7 @@
   border: 5px solid transparent;
   width: 200px;
   height: auto;
+  box-shadow: 0 0 8px black;
 }
 
 .img:hover {
