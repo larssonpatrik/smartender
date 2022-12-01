@@ -20,8 +20,15 @@
   justify-content: center;
 }
 
-.FormTwo {
+.AlterativeForm {
+  display: flex;
+  width: 80%;
+  justify-content: space-between;
 }
 
-.FormThree {
+.AlterativeFormSelect {
+  width: 100px;
+  height: 100px;
+  font-size: 30px;
+  border-radius: 12px;
 }
