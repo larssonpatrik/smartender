@@ -1,17 +1,22 @@
 .SearchFormInput {
-  width: 90%;
-  height: 60px;
+  width: 80%;
+  height: 75px;
   font-size: 30px;
+  border-radius: 12px;
+  background-color: transparent;
+  color: white;
 }
 
 .SearchFormButton {
-  height: 65px;
+  height: 80px;
+  width: 150px;
   font-size: 30px;
+  border-radius: 12px;
 }
 
 .SearchForm {
   display: flex;
-  width: 90%;
+  width: 100%;
   justify-content: center;
 }
 

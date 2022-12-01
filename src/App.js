@@ -18,7 +18,9 @@ import { SearchForm } from "./components/Forms.js";
 function App(props) {
   return (
     <div>
+      <Spacer size={16} />
       <SearchForm />
+      <Spacer size={16} />
     </div>
   );
 }
