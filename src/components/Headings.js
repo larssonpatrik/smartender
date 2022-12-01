@@ -1,13 +1,12 @@
-import "./css/Headings.css";
-
+import "../components/css/Headings.css";
 export function HeadingOne(props) {
-  return <h1 className="HeadingOne">{props.children}</h1>;
+  <h1 className="HeadingOne">{props.children}</h1>;
 }
 
 export function HeadingTwo(props) {
-  return <h2 className="HeadingTwo">{props.children}</h2>;
+  <h2 className="HeadingTwo"></h2>;
 }
 
 export function HeadingThree(props) {
-  return <h3 className="HeadingThree">{props.children}</h3>;
+  <h3 className="HeadingThree"></h3>;
 }
