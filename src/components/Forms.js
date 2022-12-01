@@ -12,7 +12,7 @@ export function SearchForm(props) {
 export function AlterativeForm(props) {
   return (
     <div className="AlterativeForm">
-      <select>
+      <select className="AlterativeFormSelect">
         <option value="Alcohol">Alcohol</option>
         <option value="Alcohol">Alcohol</option>
         <option value="Alcohol">Alcohol</option>

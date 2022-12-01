@@ -14,11 +14,12 @@ import promiseNoData from "./promiseNoData";
 import Spacer from "./components/Spacer";
 import Header from "./views/headerView";
 import { SearchForm, AlterativeForm } from "./components/Forms.js";
+import HomePresenter from "./presenters/HomePresenter.js";
 
 function App(props) {
   return (
     <div>
-      <AlterativeForm />
+      <HomePresenter />
     </div>
   );
 }
