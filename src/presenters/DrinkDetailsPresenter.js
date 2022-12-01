@@ -3,7 +3,7 @@ import promiseNoData from "../promiseNoData";
 
 import React from "react";
 import resolvePromise from "../resolvePromise";
-import { searchAPICall, searchDrinkByName } from "../DrinkSource";
+import { getDrinkById, searchAPICall, searchDrinkByName } from "../DrinkSource";
 
 export default function DrinkDetailsPresenter(props) {
   const [promiseState] = React.useState({});
@@ -15,7 +15,7 @@ export default function DrinkDetailsPresenter(props) {
   }
 
   React.useEffect(() => {
-    resolvePromise(searchDrinkByName("Mojito Extra"), promiseState, notifyACB);
+    resolvePromise(getDrinkById("15841"), promiseState, notifyACB);
   }, []);
 
 return (
