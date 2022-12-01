@@ -9,9 +9,9 @@ export default function DrinkDetailsView(props) {
     function render_ingredientsCB(drink) {
       return (
           <div className='detailsContainer'>
-            <div className='drinkInfo'>
-              <img src={drink.strDrinkThumb} alt="drink" height={500}/>
-            </div>
+            
+              <img className='drinkImg' src={drink.strDrinkThumb} alt="drink" height={500}/>
+           
 
             <div className='content'>
               <HeadingOne>{drink.strDrink}</HeadingOne>

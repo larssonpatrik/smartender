@@ -17,7 +17,10 @@ import DrinkDetailsPresenter from "./presenters/DrinkDetailsPresenter";
 import Spacer from "./components/Spacer";
 
 function App(props) {
-  return <div>Hello World!</div>;
+  return <div>
+    <DrinkCollectionPresenter/>
+    <DrinkDetailsPresenter/>
+  </div>;
 
   
 }
