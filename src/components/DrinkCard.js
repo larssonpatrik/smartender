@@ -7,7 +7,6 @@ export function DrinkCard(props) {
   return (
     <div className="container">
       <img className="img" src={props.img} alt="drink" />
-      <button onClick={onClickACB}>Check out the drink!</button>
       <HeadingThree>{props.name}</HeadingThree>
     </div>
   );
