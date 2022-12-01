@@ -1,17 +1,18 @@
-h1,
-h2,
-h3 {
-  margin: 0;
-}
 
 .HeadingOne {
-  font-family: system-ui;
-  font-size: 20px;
-  font-weight: bold;
+  font-size: 32px;
+  font-weight: 800;
+  color: whitesmoke;
 }
 
 .HeadingTwo {
+  font-size: 26px;
+  font-weight: 700;
+  color: whitesmoke;
 }
 
 .HeadingThree {
+  font-size: 22px;
+  font-weight: 500;
+  color: whitesmoke;
 }

@@ -1,11 +1,8 @@
-export function BodyOne(props) {
-  <body className="BodyOne"></body>;
+export function Paragraph(props) {
+  return <p className="Paragraph">{props.children}</p>;
 }
 
-export function BodyTwo(props) {
-  <body className="BodyTwo"></body>;
+export function METAText(props) {
+  return <p className="METAText"></p>;
 }
 
-export function BodyThree(props) {
-  <body className="BodyThree"></body>;
-}

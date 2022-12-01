@@ -7,23 +7,19 @@ import {
   filterDrinkByCategory,
   filterIngredientByAlcoholic,
   listIngredients,
+  listAlcoholics,
 } from "./DrinkSource";
 import resolvePromise from "./resolvePromise";
 import promiseNoData from "./promiseNoData";
-import Header from "./views/Header";
+import PaddanDevEnv from "./PaddDevEnv";
+import DrinkCollectionPresenter from "./presenters/DrinkCollectionPresenter";
+import DrinkDetailsPresenter from "./presenters/DrinkDetailsPresenter";
+import Spacer from "./components/Spacer";
 
-function App() {
-  //listIngredients();
-  //searchDrinkByName("vodka");
-  //filterDrinkByIngridient("Gin, Lime");
-  //filterDrinkByCategory("classic");
-  //filterIngredientByAlcoholic("non-alcoholic");
+function App(props) {
+  return <div>Hello World!</div>;
 
-  return (
-    <div>
-      <Header />
-    </div>
-  );
+  
 }
 
 export default App;

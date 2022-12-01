@@ -4,7 +4,8 @@ import Spacer from "../components/Spacer";
 import "./DrinkCollectionView.css";
 
 export default function DrinkCollectionView(props) {
-  console.log(props);
+
+  console.log('2', props.drinks[0].strDrink);
   function render_drinkCB(drink, i) {
     return (
       <div className="CardContainer" key={i}>
