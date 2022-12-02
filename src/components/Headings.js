@@ -1,5 +1,4 @@
-import "./css/Headings.css";
-
+import "../components/css/Headings.css";
 export function HeadingOne(props) {
   return <h1 className="HeadingOne">{props.children}</h1>;
 }

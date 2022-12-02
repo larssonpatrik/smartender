@@ -1,0 +1,21 @@
+.Options {
+  display: flex;
+  gap: 50px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+  align-content: space-around;
+}
+
+.link {
+  font-family: fantasy;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.Header {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 100px;
+}
