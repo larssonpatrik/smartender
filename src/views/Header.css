@@ -1,0 +1,31 @@
+.Options {
+  display: flex;
+  gap: 50px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: space-around;
+}
+
+.link {
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 400;
+  color: whitesmoke;
+}
+
+.Header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 90vw;
+  gap: 100px;
+}
+
+.btns {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  cursor: pointer;
+}
+

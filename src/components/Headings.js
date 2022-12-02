@@ -1,5 +1,4 @@
-import "./css/Headings.css";
-
+import "../components/css/Headings.css";
 export function HeadingOne(props) {
   return <h1 className="HeadingOne">{props.children}</h1>;
 }
@@ -10,4 +9,12 @@ export function HeadingTwo(props) {
 
 export function HeadingThree(props) {
   return <h3 className="HeadingThree">{props.children}</h3>;
+}
+
+export function HeadingFour(props) {
+  return (
+    <h4 className="HeadingFour" style={props.style}>
+      {props.children}
+    </h4>
+  );
 }
