@@ -7,6 +7,10 @@ import { SearchForm } from "../components/Forms";
 import Spacer from "../components/Spacer";
 import Header from "../views/headerView";
 import DrinkSlideShowView from "../views/DrinkSlideshowView.js";
+import CategoryCard from "../components/CategoryCard";
+import BarPhoto from "../images/BarPhoto.png";
+import { HeadingOne, HeadingFour } from "../components/Headings";
+import { METAText } from "../components/TextBodies";
 
 export default function HomePresenter(props) {
   const [testSearchPromiseState] = React.useState({});
@@ -48,11 +52,51 @@ export default function HomePresenter(props) {
   }, []);
 
   return (
-    <div>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+      }}
+    >
       <Spacer size={3} />
       <Header />
       <Spacer size={3} />
       <SearchForm onInputChange={userInputChange} onSearch={onSearch} />
+      <Spacer size={6} />
+      <HeadingFour style={{ textAlign: "center" }}>
+        Welcome to Smartender!
+      </HeadingFour>
+
+      <Spacer size={0} />
+      <METAText style={{ textAlign: "center" }}>
+        An extensive collection of drink recipes online. Here you will find
+        recipes for simple and good drinks and cocktails.
+      </METAText>
+      <Spacer size={6} />
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "center",
+        }}
+      >
+        <CategoryCard
+          name="Rum"
+          img="https://studyfinds.org/wp-content/uploads/2022/11/AdobeStock_375404788_Editorial_Use_Only-scaled.jpeg"
+        />
+        <Spacer size={6} />
+        <CategoryCard
+          name="Gin"
+          img="https://mir-s3-cdn-cf.behance.net/project_modules/fs/d3861425776209.5634a914d94d5.jpg"
+        />
+        <Spacer size={6} />
+
+        <CategoryCard
+          name="Vodka"
+          img="https://megaricos.com/wp-content/uploads/2021/04/shutterstock_653237029.jpg"
+        />
+      </div>
       <Spacer size={3} />
       {promiseNoData(popularDrinksPromiseState) || (
         <DrinkSlideShowView

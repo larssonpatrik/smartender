@@ -1,12 +1,11 @@
 .Paragraph {
-    font-size: 12px;
-    font-weight: 200;
-    color: whitesmoke;
+  font-size: 12px;
+  font-weight: 200;
+  color: whitesmoke;
 }
 
 .METAText {
-    font-size: 12px;
-    font-weight: 200;
-    color: grey;
+  font-size: 18px;
+  font-weight: 200;
+  color: rgb(173, 173, 173);
 }
-

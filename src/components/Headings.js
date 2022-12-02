@@ -12,5 +12,9 @@ export function HeadingThree(props) {
 }
 
 export function HeadingFour(props) {
-  return <h4 className="HeadingFour">{props.children}</h4>;
+  return (
+    <h4 className="HeadingFour" style={props.style}>
+      {props.children}
+    </h4>
+  );
 }
