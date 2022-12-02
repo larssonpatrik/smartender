@@ -3,7 +3,7 @@ import "./drinkDetails.css";
 import { HeadingOne, HeadingTwo } from "../components/Headings";
 import { Paragraph } from "../components/TextBodies";
 import Spacer from "../components/Spacer";
-import { CategoryCard } from "../components/CategoryCard";
+import CategoryCard from "../components/CategoryCard";
 
 export default function DrinkDetailsView(props) {
   //callbacks for rendering each ingredient and its image etc
