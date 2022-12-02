@@ -1,7 +1,9 @@
-export function ButtonOne(props) {
-  <button className="ButtonOne"></button>;
+import './css/Button.css'
+
+export function PrimaryButton(props) {
+  return <button className="PrimaryButton">{props.children}</button>;
 }
 
-export function ButtonTwo(props) {
-  <button className="ButtonTwo"></button>;
+export function SecondaryButton(props) {
+  return <button className="SecondaryButton">{props.children}</button>;
 }
