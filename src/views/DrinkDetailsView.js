@@ -3,11 +3,13 @@ import "./drinkDetails.css";
 import { HeadingOne, HeadingTwo } from "../components/Headings";
 import { Paragraph } from "../components/TextBodies";
 import Spacer from "../components/Spacer";
+import { CategoryCard } from "../components/CategoryCard";
 
 export default function DrinkDetailsView(props) {
   //callbacks for rendering each ingredient and its image etc
   function render_ingredientsCB(drink) {
     return (
+      <>
       <div className="detailsContainer">
         <img
           className="drinkImg"
@@ -75,6 +77,11 @@ export default function DrinkDetailsView(props) {
           </div>
         </div>
       </div>
+      
+      <CategoryCard name='Gin' img='https://mir-s3-cdn-cf.behance.net/project_modules/fs/d3861425776209.5634a914d94d5.jpg'/>
+      <CategoryCard name='Vodka' img='https://megaricos.com/wp-content/uploads/2021/04/shutterstock_653237029.jpg'/>
+      <CategoryCard name='Rum' img='http://consumatorium.com/wp-content/uploads/2015/08/Tiki-Drinks-2015-08-04-45_028a019e0_6945.jpg'/>
+      </>
     );
   }
 

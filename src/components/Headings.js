@@ -11,3 +11,7 @@ export function HeadingTwo(props) {
 export function HeadingThree(props) {
   return <h3 className="HeadingThree">{props.children}</h3>;
 }
+
+export function HeadingFour(props) {
+  return <h4 className="HeadingFour">{props.children}</h4>;
+}
