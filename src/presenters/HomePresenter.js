@@ -111,7 +111,7 @@ export default function HomePresenter(props) {
           onClickCard={clickOnCategoryCardACB}
         />
       </div>
-      <Spacer size={3} />
+      <Spacer size={6}/>
       {promiseNoData(popularDrinksPromiseState) || (
         <DrinkSlideShowView
           title="Popular Drinks"
