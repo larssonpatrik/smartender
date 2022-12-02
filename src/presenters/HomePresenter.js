@@ -1,6 +1,6 @@
 import React from "react";
 import resolvePromise from "../resolvePromise";
-import { searchDrinkByName } from "../DrinkSource";
+import { filterDrinkByIngridient, searchDrinkByName } from "../DrinkSource";
 import promiseNoData from "../promiseNoData";
 
 import { SearchForm } from "../components/Forms";
@@ -14,6 +14,8 @@ import { METAText } from "../components/TextBodies";
 
 export default function HomePresenter(props) {
   const [testSearchPromiseState] = React.useState({});
+  const [CategoryCardPromiseState] = React.useState({});
+
   const [popularDrinksPromiseState] = React.useState({});
   const [ginDrinksPromiseState] = React.useState({});
   const [searchQuery, setSearchQuery] = React.useState({});
@@ -24,8 +26,17 @@ export default function HomePresenter(props) {
     reRender({});
   }
 
-  function clickOnCardACB(nameOfDrink) {
+  function clickOnDrinkCardACB(nameOfDrink) {
     alert(nameOfDrink);
+  }
+
+  function clickOnCategoryCardACB(ingredient) {
+    resolvePromise(
+      filterDrinkByIngridient(ingredient),
+      CategoryCardPromiseState,
+      notifyACB
+    );
+    console.log(CategoryCardPromiseState);
   }
 
   function userInputChange(query) {
@@ -84,17 +95,20 @@ export default function HomePresenter(props) {
         <CategoryCard
           name="Rum"
           img="https://studyfinds.org/wp-content/uploads/2022/11/AdobeStock_375404788_Editorial_Use_Only-scaled.jpeg"
+          onClickCard={clickOnCategoryCardACB}
         />
         <Spacer size={6} />
         <CategoryCard
           name="Gin"
           img="https://mir-s3-cdn-cf.behance.net/project_modules/fs/d3861425776209.5634a914d94d5.jpg"
+          onClickCard={clickOnCategoryCardACB}
         />
         <Spacer size={6} />
 
         <CategoryCard
           name="Vodka"
           img="https://megaricos.com/wp-content/uploads/2021/04/shutterstock_653237029.jpg"
+          onClickCard={clickOnCategoryCardACB}
         />
       </div>
       <Spacer size={3} />
@@ -102,7 +116,7 @@ export default function HomePresenter(props) {
         <DrinkSlideShowView
           title="Popular Drinks"
           data={popularDrinksPromiseState.data}
-          clickOnCard={clickOnCardACB}
+          clickOnCard={clickOnDrinkCardACB}
         />
       )}
       <Spacer size={3} />
@@ -110,7 +124,7 @@ export default function HomePresenter(props) {
         <DrinkSlideShowView
           title="Gin Drinks"
           data={ginDrinksPromiseState.data}
-          clickOnCard={clickOnCardACB}
+          clickOnCard={clickOnDrinkCardACB}
         />
       )}
     </div>
