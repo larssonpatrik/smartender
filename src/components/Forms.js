@@ -1,4 +1,5 @@
 import "../components/css/Forms.css";
+import Spacer from "./Spacer";
 
 export function SearchForm(props) {
   function onInputChangeACB(event) {
@@ -11,9 +12,13 @@ export function SearchForm(props) {
 
   return (
     <div className="SearchForm" onChange={onInputChangeACB}>
-      <input className="SearchFormInput" />
+      <input
+        className="SearchFormInput"
+        placeholder="Search for your favorite drinks"
+      />
+      <Spacer size={0} />
       <button className="SearchFormButton" onClick={onUserClickOnButtonACB}>
-        Search
+        Lets go
       </button>
     </div>
   );
