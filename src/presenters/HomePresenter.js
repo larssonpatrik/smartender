@@ -70,11 +70,15 @@ export default function HomePresenter(props) {
         justifyContent: "center",
       }}
     >
+      <Spacer size={3} />
+      <Header />
+      <Spacer size={3} />
       <SearchForm onInputChange={userInputChange} onSearch={onSearch} />
-      <Spacer size={6} />
+      <Spacer size={5} />
       <HeadingFour style={{ textAlign: "center" }}>
         Welcome to Smartender!
       </HeadingFour>
+
       <Spacer size={0} />
       <METAText style={{ textAlign: "center" }}>
         An extensive collection of drink recipes online. Here you will find
@@ -107,7 +111,8 @@ export default function HomePresenter(props) {
           onClickCard={clickOnCategoryCardACB}
         />
       </div>
-      <Spacer size={6} />
+     
+      <Spacer size={4} />
       {promiseNoData(popularDrinksPromiseState) || (
         <DrinkSlideShowView
           title="Popular Drinks"
@@ -118,10 +123,19 @@ export default function HomePresenter(props) {
       <Spacer size={3} />
       {promiseNoData(ginDrinksPromiseState) || (
         <DrinkSlideShowView
-          title="Gin Drinks"
+          title="New kids in the block"
           data={ginDrinksPromiseState.data}
           clickOnCard={clickOnDrinkCardACB}
         />
+      )}
+      <Spacer size={3} />
+      {promiseNoData(ginDrinksPromiseState) || (
+        <DrinkSlideShowView
+          title="Editors pick"
+          data={ginDrinksPromiseState.data}
+          clickOnCard={clickOnDrinkCardACB}
+        />
+        
       )}
     </div>
   );
