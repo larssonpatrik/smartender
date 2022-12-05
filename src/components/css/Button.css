@@ -1,8 +1,8 @@
 .PrimaryButton {
+    padding: 4px 12px;
     border-radius: 8px;
     border: none;
-    height: 30px;
-    width: 100px;
+    
     font-size: 20px;
     background-color: rgb(162,123,177);
     color: rgb(22,14,38);

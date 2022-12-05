@@ -9,13 +9,11 @@ import Spacer from "./components/Spacer";
 import DrinkDetailsPresenter from "./presenters/DrinkDetailsPresenter.js";
 import DrinkSlideshowView from "./views/DrinkSlideshowView";
 import { AlterativeForm } from "./components/Forms";
+import RandomizePresenter from "./presenters/RandomizePresenter"
 
 function App(props) {
   return (
     <>
-      <Spacer size={3} />
-      <Header />
-      <Spacer size={3} />
       <Routes>
         <Route path="/" element={<HomePresenter />}></Route>
         <Route path="/drinkDetalis">
@@ -27,7 +25,7 @@ function App(props) {
           </Route>
         </Route>
         <Route path="/search" element={<AlterativeForm />}></Route>
-        <Route path="/randomize" element={<div />}></Route>
+        <Route path="/randomize" element={<RandomizePresenter/>}></Route>
         <Route path="/favorites" element={<div />}></Route>
         <Route path="*" element={<h1>NOT FOUND</h1>}></Route>
       </Routes>

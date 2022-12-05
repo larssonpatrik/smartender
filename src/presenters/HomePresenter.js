@@ -74,7 +74,7 @@ export default function HomePresenter(props) {
       <Header />
       <Spacer size={3} />
       <SearchForm onInputChange={userInputChange} onSearch={onSearch} />
-      <Spacer size={6} />
+      <Spacer size={5} />
       <HeadingFour style={{ textAlign: "center" }}>
         Welcome to Smartender!
       </HeadingFour>
@@ -111,20 +111,8 @@ export default function HomePresenter(props) {
           onClickCard={clickOnCategoryCardACB}
         />
       </div>
-      <Spacer size={3} />
-      <CategoryCard
-        name="Gin"
-        img="https://mir-s3-cdn-cf.behance.net/project_modules/fs/d3861425776209.5634a914d94d5.jpg"
-      />
-      <CategoryCard
-        name="Vodka"
-        img="https://megaricos.com/wp-content/uploads/2021/04/shutterstock_653237029.jpg"
-      />
-      <CategoryCard
-        name="Rum"
-        img="http://consumatorium.com/wp-content/uploads/2015/08/Tiki-Drinks-2015-08-04-45_028a019e0_6945.jpg"
-      />
-      <Spacer size={3} />
+     
+      <Spacer size={4} />
       {promiseNoData(popularDrinksPromiseState) || (
         <DrinkSlideShowView
           title="Popular Drinks"
@@ -135,10 +123,19 @@ export default function HomePresenter(props) {
       <Spacer size={3} />
       {promiseNoData(ginDrinksPromiseState) || (
         <DrinkSlideShowView
-          title="Gin Drinks"
+          title="New kids in the block"
           data={ginDrinksPromiseState.data}
           clickOnCard={clickOnDrinkCardACB}
         />
+      )}
+      <Spacer size={3} />
+      {promiseNoData(ginDrinksPromiseState) || (
+        <DrinkSlideShowView
+          title="Editors pick"
+          data={ginDrinksPromiseState.data}
+          clickOnCard={clickOnDrinkCardACB}
+        />
+        
       )}
     </div>
   );
