@@ -14,6 +14,9 @@ import RandomizePresenter from "./presenters/RandomizePresenter"
 function App(props) {
   return (
     <>
+      <Spacer size={3} />
+      <Header />
+      <Spacer size={3} />
       <Routes>
         <Route path="/" element={<HomePresenter />}></Route>
         <Route path="/drinkDetalis">
