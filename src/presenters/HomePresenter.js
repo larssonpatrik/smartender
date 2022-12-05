@@ -70,9 +70,6 @@ export default function HomePresenter(props) {
         justifyContent: "center",
       }}
     >
-      <Spacer size={3} />
-      <Header />
-      <Spacer size={3} />
       <SearchForm onInputChange={userInputChange} onSearch={onSearch} />
       <Spacer size={6} />
       <HeadingFour style={{ textAlign: "center" }}>
