@@ -28,10 +28,10 @@ export function AlterativeForm(props) {
   return (
     <div className="AlterativeForm">
       <select className="AlterativeFormSelect">
-        <option value="Alcohol">Alcohol</option>
-        <option value="Alcohol">Alcohol</option>
-        <option value="Alcohol">Alcohol</option>
-        <option value="Alcohol">Alcohol</option>
+        <option value="Vodka">Vodka</option>
+        <option value="Gin">Gin</option>
+        <option value="Rum">Rum</option>
+        <option value="Tequila">Tequila</option>
       </select>
 
       <select>

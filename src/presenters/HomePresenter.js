@@ -118,7 +118,15 @@ export default function HomePresenter(props) {
       <Spacer size={3} />
       {promiseNoData(ginDrinksPromiseState) || (
         <DrinkSlideShowView
-          title="Gin Drinks"
+          title="New kids on the block"
+          data={ginDrinksPromiseState.data}
+          clickOnCard={clickOnDrinkCardACB}
+        />
+      )}
+      <Spacer size={3} />
+      {promiseNoData(ginDrinksPromiseState) || (
+        <DrinkSlideShowView
+          title="Developers picks"
           data={ginDrinksPromiseState.data}
           clickOnCard={clickOnDrinkCardACB}
         />
