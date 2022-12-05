@@ -8,8 +8,8 @@
   width: 100%;
   height: 75px;
   font-size: 30px;
-  background-color: #f0f0f0;
-  color: white;
+  background-color: rgb(162, 123, 177);
+  color: rgb(255, 255, 255);
   outline: none;
   text-align: center;
 }
