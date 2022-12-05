@@ -19,7 +19,11 @@ export default function Header(props) {
   return (
     <div style={{ display: "flex", justifyContent: "center" }}>
       <div className="Header">
-        <p style={{ color: "whitesmoke" }}>Logga</p>
+        <img
+          className="Img"
+          //Will fix this, image needs cropping
+          src="https://scontent.fbma5-1.fna.fbcdn.net/v/t1.15752-9/317358773_815755949506469_4279423134182834123_n.png?_nc_cat=110&ccb=1-7&_nc_sid=ae9488&_nc_ohc=OEOYHcKN8R4AX9cyw3Z&_nc_ht=scontent.fbma5-1.fna&oh=03_AdSa2RBvBlgXbpO4mWlvbkxwcsjpTd2qvX-q4xSbKTK7Zw&oe=63B19F61"
+        ></img>
         <div className="Options">
           <div>
             <Link className='link' to="/">
