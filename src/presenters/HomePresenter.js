@@ -70,11 +70,15 @@ export default function HomePresenter(props) {
         justifyContent: "center",
       }}
     >
+      <Spacer size={3} />
+      <Header />
+      <Spacer size={3} />
       <SearchForm onInputChange={userInputChange} onSearch={onSearch} />
       <Spacer size={6} />
       <HeadingFour style={{ textAlign: "center" }}>
         Welcome to Smartender!
       </HeadingFour>
+
       <Spacer size={0} />
       <METAText style={{ textAlign: "center" }}>
         An extensive collection of drink recipes online. Here you will find
@@ -107,7 +111,20 @@ export default function HomePresenter(props) {
           onClickCard={clickOnCategoryCardACB}
         />
       </div>
-      <Spacer size={6} />
+      <Spacer size={3} />
+      <CategoryCard
+        name="Gin"
+        img="https://mir-s3-cdn-cf.behance.net/project_modules/fs/d3861425776209.5634a914d94d5.jpg"
+      />
+      <CategoryCard
+        name="Vodka"
+        img="https://megaricos.com/wp-content/uploads/2021/04/shutterstock_653237029.jpg"
+      />
+      <CategoryCard
+        name="Rum"
+        img="http://consumatorium.com/wp-content/uploads/2015/08/Tiki-Drinks-2015-08-04-45_028a019e0_6945.jpg"
+      />
+      <Spacer size={3} />
       {promiseNoData(popularDrinksPromiseState) || (
         <DrinkSlideShowView
           title="Popular Drinks"
