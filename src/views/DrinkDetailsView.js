@@ -1,5 +1,5 @@
 import React from "react";
-import "./DrinkDetails.css";
+import "./drinkDetails.css";
 import { HeadingOne, HeadingTwo } from "../components/Headings";
 import { Paragraph } from "../components/TextBodies";
 import Spacer from "../components/Spacer";
