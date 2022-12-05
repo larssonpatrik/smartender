@@ -22,23 +22,23 @@ export default function Header(props) {
         <p style={{ color: "whitesmoke" }}>Logga</p>
         <div className="Options">
           <div>
-            <Link className='link' to="/">
+            <Link to="/">
               <BiHome />
               Home
             </Link>
           </div>
           <div>
-            <Link className='link' to="/search">
+            <Link to="/search">
               <BiSearch /> Advanced search
             </Link>
           </div>
           <div>
-            <Link className='link' to="/randomize">
+            <Link to="/randomize">
               <BiDrink /> Randomize
             </Link>
           </div>
           <div>
-            <Link className='link' to="/favorites">
+            <Link to="/favorites">
               <BiHeart /> Favourites
             </Link>
           </div>
