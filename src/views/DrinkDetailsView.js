@@ -21,7 +21,7 @@ export default function DrinkDetailsView(props) {
             <HeadingOne>{drink.strDrink}</HeadingOne>
             <Spacer size={3} />
 
-            <div className="ingredientInfo">
+            <div className="ingredientInfo"> {/*Kolla om det finns unit också, annars står det null vilket är fult*/}
               <HeadingTwo>Ingredients</HeadingTwo>
               <Spacer size={1} />
               <Paragraph>
@@ -34,7 +34,9 @@ export default function DrinkDetailsView(props) {
                 {drink.strIngredient3}: {drink.strMeasure3}
               </Paragraph>
               <Paragraph>
-                {drink.strIngredient4}: {drink.strMeasure4}
+              {drink.strIngredient4
+                  ? drink.strIngredient4 + ": " + drink.strMeasure4
+                  : ""}
               </Paragraph>
               <Paragraph>
                 {drink.strIngredient5
@@ -72,7 +74,7 @@ export default function DrinkDetailsView(props) {
             <div className="instructions">
               <HeadingTwo>Instructions</HeadingTwo>
               <Spacer size={1} />
-              {drink.strInstructions}
+              <Paragraph>{drink.strInstructions}</Paragraph>
             </div>
           </div>
         </div>

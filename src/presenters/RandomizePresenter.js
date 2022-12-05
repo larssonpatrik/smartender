@@ -3,7 +3,7 @@ import promiseNoData from "../promiseNoData";
 
 import React from "react";
 import resolvePromise from "../resolvePromise";
-import { getDrinkById, searchAPICall, searchDrinkByName } from "../DrinkSource";
+import { getRandomDrink} from "../DrinkSource";
 import { PrimaryButton } from "../components/Buttons";
 import Spacer from "../components/Spacer";
 
@@ -15,8 +15,12 @@ export default function DrinkDetailsPresenter(props) {
     reRender({});
   }
 
+  function randomizeDrinkACB() {
+    resolvePromise(getRandomDrink(), promiseState, notifyACB)
+  }
+
   React.useEffect(() => {
-    resolvePromise(getDrinkById("15841"), promiseState, notifyACB);
+    resolvePromise(getRandomDrink(), promiseState, notifyACB);
   }, []);
 
   return (
@@ -29,7 +33,7 @@ export default function DrinkDetailsPresenter(props) {
       {promiseNoData(promiseState) || (
         <DrinkDetailsView drinks={promiseState.data.drinks} />
       )}
-      <PrimaryButton>Randomize again!</PrimaryButton>
+      <PrimaryButton action={randomizeDrinkACB}>Randomize again!</PrimaryButton>
       <Spacer size={5}/>
     </div>
   );
