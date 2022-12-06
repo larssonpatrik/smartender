@@ -21,7 +21,10 @@ export default function DrinkSlideshowView(props) {
 
   return (
     <div className="SlideshowContainer">
-      <HeadingTwo>{props.title}</HeadingTwo>
+      <div style={{ display: "flex" }}>
+        <Spacer size={2} />
+        <HeadingTwo>{props.title}</HeadingTwo>
+      </div>
       <Spacer size={0} />
       <div className="DrinkCardContainer">
         {drinkArray.map(renderDrinkCard)};

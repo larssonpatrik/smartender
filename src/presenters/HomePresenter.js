@@ -118,6 +118,7 @@ export default function HomePresenter(props) {
           clickOnCard={clickOnDrinkCardACB}
         />
       )}
+
       <Spacer size={3} />
       {promiseNoData(latestDrinksPromiseState) || (
         <DrinkSlideShowView
