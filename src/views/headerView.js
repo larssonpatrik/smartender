@@ -14,6 +14,7 @@ import "../views/Header.css";
 import "../components/css/Headings.css";
 import Spacer from "../components/Spacer";
 import { PrimaryButton, SecondaryButton } from "../components/Buttons";
+import { HeadingThree } from "../components/Headings";
 
 export default function Header(props) {
   return (
@@ -24,22 +25,29 @@ export default function Header(props) {
           <div>
             <Link className="link" to="/">
               <BiHome />
-              Home
+              <Spacer size={0} />
+              <HeadingThree>Home</HeadingThree>
             </Link>
           </div>
           <div>
             <Link className="link" to="/search">
-              <BiSearch /> Advanced search
+              <BiSearch />
+              <Spacer size={0} />
+              <HeadingThree>Advanced search</HeadingThree>
             </Link>
           </div>
           <div>
             <Link className="link" to="/randomize">
-              <BiDrink /> Randomize
+              <BiDrink />
+              <Spacer size={0} />
+              <HeadingThree>Randomize</HeadingThree>
             </Link>
           </div>
           <div>
             <Link className="link" to="/favorites">
-              <BiHeart /> Favourites
+              <BiHeart />
+              <Spacer size={0} />
+              <HeadingThree>Favorites</HeadingThree>
             </Link>
           </div>
         </div>
