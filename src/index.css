@@ -116,7 +116,7 @@ body {
   line-height: 1;
   margin: 0;
   font-family: "Montserrat";
-
+  background: rgb(22, 14, 38);
   background: linear-gradient(
     180deg,
     rgba(22, 14, 38, 1) 0%,
