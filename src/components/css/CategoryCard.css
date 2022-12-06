@@ -9,6 +9,7 @@
   border: 5px solid white;
   border-radius: 13px;
   background-size: 350px;
+  box-shadow: 0 0 8px rgb(0, 0, 0);
 }
 
 .categoryContainer:hover {

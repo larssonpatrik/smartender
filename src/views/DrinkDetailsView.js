@@ -33,7 +33,9 @@ export default function DrinkDetailsView(props) {
               {drink.strIngredient2}: {drink.strMeasure2}
             </Paragraph>
             <Paragraph>
-              {drink.strIngredient3}: {drink.strMeasure3}
+              {drink.strIngredient3
+                ? drink.strIngredient3 + ": " + drink.strMeasure3
+                : ""}
             </Paragraph>
             <Paragraph>
               {drink.strIngredient4
