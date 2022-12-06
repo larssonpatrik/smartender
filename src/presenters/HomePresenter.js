@@ -1,6 +1,11 @@
 import React from "react";
 import resolvePromise from "../resolvePromise";
-import { filterDrinkByIngridient, searchDrinkByName } from "../DrinkSource";
+import {
+  filterDrinkByIngridient,
+  getLatestDrinks,
+  getPopularDrinks,
+  searchDrinkByName,
+} from "../DrinkSource";
 import promiseNoData from "../promiseNoData";
 
 import { SearchForm } from "../components/Forms";
@@ -17,7 +22,7 @@ export default function HomePresenter(props) {
   const [CategoryCardPromiseState] = React.useState({});
 
   const [popularDrinksPromiseState] = React.useState({});
-  const [ginDrinksPromiseState] = React.useState({});
+  const [latestDrinksPromiseState] = React.useState({});
   const [searchQuery, setSearchQuery] = React.useState({});
 
   const [, reRender] = React.useState();
@@ -53,13 +58,9 @@ export default function HomePresenter(props) {
   }
 
   React.useEffect(() => {
-    resolvePromise(
-      searchDrinkByName("vodka"),
-      popularDrinksPromiseState,
-      notifyACB
-    );
+    resolvePromise(getPopularDrinks(), popularDrinksPromiseState, notifyACB);
 
-    resolvePromise(searchDrinkByName("Gin"), ginDrinksPromiseState, notifyACB);
+    resolvePromise(getLatestDrinks(), latestDrinksPromiseState, notifyACB);
   }, []);
 
   return (
@@ -116,18 +117,18 @@ export default function HomePresenter(props) {
         />
       )}
       <Spacer size={3} />
-      {promiseNoData(ginDrinksPromiseState) || (
+      {promiseNoData(latestDrinksPromiseState) || (
         <DrinkSlideShowView
           title="New kids on the block"
-          data={ginDrinksPromiseState.data}
+          data={latestDrinksPromiseState.data}
           clickOnCard={clickOnDrinkCardACB}
         />
       )}
       <Spacer size={3} />
-      {promiseNoData(ginDrinksPromiseState) || (
+      {promiseNoData(latestDrinksPromiseState) || (
         <DrinkSlideShowView
           title="Developers picks"
-          data={ginDrinksPromiseState.data}
+          data={latestDrinksPromiseState.data}
           clickOnCard={clickOnDrinkCardACB}
         />
       )}

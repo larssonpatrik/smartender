@@ -224,3 +224,69 @@ export function getRandomDrink() {
       .catch(rejectPromiseACB);
   });
 }
+
+// MOST POPULAR
+export function getPopularDrinks() {
+  function throwError() {
+    throw new Error("Something went nuts! Try again!");
+  }
+  function treatHTTPResponseACB(resp) {
+    return resp.status === 200 ? resp.json() : throwError();
+  }
+
+  const options = {
+    method: "GET",
+    headers: {
+      "X-RapidAPI-Key": API_KEY,
+      "X-RapidAPI-Host": "the-cocktail-db.p.rapidapi.com",
+    },
+  };
+
+  return new Promise(async function createPromiseACB(resolve, reject) {
+    function resolvePromiseACB(res) {
+      resolve(res);
+    }
+
+    function rejectPromiseACB(err) {
+      reject(err);
+    }
+
+    return fetch("https://the-cocktail-db.p.rapidapi.com/popular.php", options)
+      .then(treatHTTPResponseACB)
+      .then(resolvePromiseACB)
+      .catch(rejectPromiseACB);
+  });
+}
+
+// LATEST
+export function getLatestDrinks() {
+  function throwError() {
+    throw new Error("Something went nuts! Try again!");
+  }
+  function treatHTTPResponseACB(resp) {
+    return resp.status === 200 ? resp.json() : throwError();
+  }
+
+  const options = {
+    method: "GET",
+    headers: {
+      "X-RapidAPI-Key": API_KEY,
+      "X-RapidAPI-Host": "the-cocktail-db.p.rapidapi.com",
+    },
+  };
+
+  return new Promise(async function createPromiseACB(resolve, reject) {
+    function resolvePromiseACB(res) {
+      resolve(res);
+    }
+
+    function rejectPromiseACB(err) {
+      reject(err);
+    }
+
+    return fetch("https://the-cocktail-db.p.rapidapi.com/latest.php", options)
+      .then(treatHTTPResponseACB)
+      .then(resolvePromiseACB)
+      .catch(rejectPromiseACB);
+  });
+}
