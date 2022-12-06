@@ -1,5 +1,6 @@
 import "../components/css/Forms.css";
 import Spacer from "./Spacer";
+import { PrimaryButton } from "./Buttons";
 
 export function SearchForm(props) {
   function onInputChangeACB(event) {
@@ -16,10 +17,8 @@ export function SearchForm(props) {
         className="SearchFormInput"
         placeholder="Search for your favorite drinks"
       />
-      <Spacer size={0} />
-      <button className="SearchFormButton" onClick={onUserClickOnButtonACB}>
-        Lets go
-      </button>
+      <Spacer size={1} />
+      <PrimaryButton action={onUserClickOnButtonACB}>Let's go!</PrimaryButton>
     </div>
   );
 }
