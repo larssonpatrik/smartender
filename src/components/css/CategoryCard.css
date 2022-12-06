@@ -15,4 +15,5 @@
 .categoryContainer:hover {
   border: 5px solid rgb(162, 123, 177);
   border-radius: 13px;
+  cursor: pointer;
 }
