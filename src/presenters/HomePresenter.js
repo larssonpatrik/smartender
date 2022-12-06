@@ -41,6 +41,7 @@ export default function HomePresenter(props) {
       CategoryCardPromiseState,
       notifyACB
     );
+    alert("Check console for result!");
     console.log(CategoryCardPromiseState);
   }
 
@@ -54,6 +55,7 @@ export default function HomePresenter(props) {
       testSearchPromiseState,
       notifyACB
     );
+    alert("Check console for result!");
     console.log(testSearchPromiseState);
   }
 
