@@ -3,7 +3,7 @@ import promiseNoData from "../promiseNoData";
 
 import React from "react";
 import resolvePromise from "../resolvePromise";
-import { getDrinkById, searchAPICall, searchDrinkByName } from "../DrinkSource";
+import { getDrinkById } from "../DrinkSource";
 
 export default function DrinkDetailsPresenter(props) {
   const [promiseState] = React.useState({});

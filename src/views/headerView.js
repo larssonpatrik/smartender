@@ -20,7 +20,9 @@ export default function Header(props) {
   return (
     <div style={{ display: "flex", justifyContent: "center" }}>
       <div className="Header">
-        <img className="Img" src="https://iili.io/HC6Ypqb.png" alt="logo" />
+        <Link to="/">
+          <img className="Img" src="https://iili.io/HC6Ypqb.png" alt="logo" />
+        </Link>
         <div className="Options">
           <div>
             <Link className="link" to="/">

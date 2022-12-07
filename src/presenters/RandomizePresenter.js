@@ -6,6 +6,8 @@ import resolvePromise from "../resolvePromise";
 import { getRandomDrink } from "../DrinkSource";
 import { PrimaryButton } from "../components/Buttons";
 import Spacer from "../components/Spacer";
+import { HeadingFour } from "../components/Headings";
+import { METAText } from "../components/TextBodies";
 
 export default function DrinkDetailsPresenter(props) {
   const [promiseState] = React.useState({});
@@ -32,6 +34,13 @@ export default function DrinkDetailsPresenter(props) {
         alignItems: "center",
       }}
     >
+      <Spacer size={2} />
+
+      <HeadingFour style={{ textAlign: "center" }}>Randomizer</HeadingFour>
+      <Spacer size={0} />
+      <METAText style={{ textAlign: "center" }}>
+        The drink selected just for you!
+      </METAText>
       <Spacer size={3} />
       <PrimaryButton action={randomizeDrinkACB}>Randomize again!</PrimaryButton>
       {promiseNoData(promiseState) || (
