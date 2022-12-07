@@ -4,6 +4,7 @@ import promiseNoData from "../promiseNoData";
 import React from "react";
 import resolvePromise from "../resolvePromise";
 import { getDrinkById } from "../DrinkSource";
+import { useParams } from "react-router-dom";
 
 export default function DrinkDetailsPresenter(props) {
   const [promiseState] = React.useState({});
@@ -13,8 +14,10 @@ export default function DrinkDetailsPresenter(props) {
     reRender({});
   }
 
+  const { id } = useParams();
+
   React.useEffect(() => {
-    resolvePromise(getDrinkById("15841"), promiseState, notifyACB);
+    resolvePromise(getDrinkById(id), promiseState, notifyACB);
   }, []);
 
   return (
