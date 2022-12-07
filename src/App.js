@@ -10,23 +10,20 @@ import DrinkDetailsPresenter from "./presenters/DrinkDetailsPresenter.js";
 import RandomizePresenter from "./presenters/RandomizePresenter.js";
 import DrinkSlideshowView from "./views/DrinkSlideshowView";
 import { AlterativeForm } from "./components/Forms";
+import DrinkDetailsView from "./views/DrinkDetailsView";
 
 function App(props) {
   return (
     <>
-    <Spacer size={3} />
+      <Spacer size={3} />
       <Header />
       <Spacer size={3} />
       <Routes>
         <Route path="/" element={<HomePresenter />}></Route>
-        <Route path="/drinkDetalis">
-          <Route index element={<DrinkDetailsPresenter />}></Route>
-          <Route path=":id" element={<DrinkSlideshowView />}>
-            {
-              // måste skicka med id på drinken // behöver lägga in const{id}=useParams() på den sidan
-            }
-          </Route>
-        </Route>
+        <Route
+          path="/drinkDetails/:id"
+          element={<DrinkDetailsPresenter />}
+        ></Route>
         <Route path="/search" element={<AlterativeForm />}></Route>
         <Route path="/randomize" element={<RandomizePresenter />}></Route>
         <Route path="/favorites" element={<div />}></Route>

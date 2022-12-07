@@ -1,6 +1,8 @@
 import { HeadingThree } from "./Headings";
 import "./css/DrinkCard.css";
 import Spacer from "./Spacer";
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function DrinkCard(props) {
   return (
