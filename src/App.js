@@ -32,7 +32,7 @@ function App(props) {
           path="/categoryResult/:userInput"
           element={<CategoryResultsPresenter />}
         ></Route>
-        <Route path="/search" element={<AlterativeForm />}></Route>
+        <Route path="/search" element={<AdvancedSearchPresenter />}></Route>
         <Route path="/randomize" element={<RandomizePresenter />}></Route>
         <Route path="/favorites" element={<div />}></Route>
         <Route path="*" element={<h1>NOT FOUND</h1>}></Route>
