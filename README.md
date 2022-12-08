@@ -1,10 +1,6 @@
 # Smartender
 
-Group: 55
-Greta Jonsson
-Patrik Larsson
-Samuel Ribaric
-Felicia Atterling
+Group: 55 Greta Jonsson, Patrik Larsson, Samuel Ribaric, Felicia Atterling
 
 ## Description of project
 
