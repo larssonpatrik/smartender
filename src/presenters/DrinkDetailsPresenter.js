@@ -21,7 +21,13 @@ export default function DrinkDetailsPresenter(props) {
   }, []);
 
   return (
-    <div>
+    <div
+    style={{
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "center",
+      alignItems: "center",
+    }}>
       {promiseNoData(promiseState) || (
         <DrinkDetailsView drinks={promiseState.data.drinks} />
       )}
