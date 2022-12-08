@@ -32,10 +32,16 @@ function App(props) {
           path="/categoryResult/:alcohol"
           element={<CategoryResultsPresenter />}
         ></Route>
-        <Route path="/search" element={<AdvancedSearchPresenter />}></Route>
+        <Route
+          path="/advancedsearch"
+          element={<AdvancedSearchPresenter />}
+        ></Route>
         <Route path="/randomize" element={<RandomizePresenter />}></Route>
         <Route path="/favorites" element={<div />}></Route>
-        <Route path="*" element={<HeadingFour>DU ÄR FKN BARSTOPPAD</HeadingFour>}></Route>
+        <Route
+          path="*"
+          element={<HeadingFour>DU ÄR FKN BARSTOPPAD</HeadingFour>}
+        ></Route>
       </Routes>
     </>
   );
