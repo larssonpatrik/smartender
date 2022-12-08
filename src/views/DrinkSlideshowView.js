@@ -22,7 +22,7 @@ export default function DrinkSlideshowView(props) {
 
   return (
     <div className="SlideshowContainer">
-      <div style={{ display: "flex" }}>
+      <div style={{ display: "flex"}}>
         <Spacer size={2} />
         <HeadingTwo>{props.title}</HeadingTwo>
       </div>

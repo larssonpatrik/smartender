@@ -89,6 +89,7 @@ export default function HomePresenter(props) {
           display: "flex",
           flexDirection: "row",
           justifyContent: "center",
+          alignItems: "center"
         }}
       >
         <CategoryCard
