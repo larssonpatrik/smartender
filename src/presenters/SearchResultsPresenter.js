@@ -3,6 +3,7 @@ import React from "react";
 import resolvePromise from "../resolvePromise";
 import { searchDrinkByName } from "../DrinkSource";
 import promiseNoData from "../promiseNoData";
+import { useParams } from "react-router-dom";
 
 export default function SearchResultsPresenter(props) {
   const [promiseState] = React.useState({});
@@ -12,9 +13,12 @@ export default function SearchResultsPresenter(props) {
     reRender({});
   }
 
+  const { searchInput } = useParams();
+
   React.useEffect(() => {
-    resolvePromise(searchDrinkByName("Vodka"), promiseState, notifyACB);
+    resolvePromise(searchDrinkByName(searchInput), promiseState, notifyACB);
   }, []);
+
   //Here props will be used instead of placeholder "drinks" const later
   return (
     <div>

@@ -7,7 +7,6 @@ import Header from "./views/headerView";
 import Spacer from "./components/Spacer";
 import DrinkDetailsPresenter from "./presenters/DrinkDetailsPresenter.js";
 import RandomizePresenter from "./presenters/RandomizePresenter.js";
-import { AlterativeForm } from "./components/Forms";
 import AdvancedSearchPresenter from "./presenters/AdvancedSearchPresenter";
 import SearchResultsPresenter from "./presenters/SearchResultsPresenter";
 import CategoryResultsPresenter from "./presenters/CategoryResultPresenter";
@@ -25,7 +24,7 @@ function App(props) {
           element={<DrinkDetailsPresenter />}
         ></Route>
         <Route
-          path="/searchResult"
+          path="/searchResult/:searchInput"
           element={<SearchResultsPresenter />}
         ></Route>
         <Route
