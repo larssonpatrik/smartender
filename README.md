@@ -1,5 +1,11 @@
 # Smartender
 
+Group: 55
+Greta Jonsson
+Patrik Larsson
+Samuel Ribaric
+Felicia Atterling
+
 ## Description of project
 
 Smartender is an app for hobby bartenders. At the end of the project we want smartender to allow users to search for drinks, browse through categories, get a randomized drink suggestion and be able to search for drinks based on ingredients you already have at home.
