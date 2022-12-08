@@ -29,6 +29,8 @@ export default function SearchResultsView(props) {
   }
 
   return (
-    <div className="resultContainer">{props.drinks.map(render_drinkCB)}</div>
+    <div 
+    className="resultContainer"
+    >{props.drinks.map(render_drinkCB)}</div>
   );
 }

@@ -10,6 +10,7 @@ import RandomizePresenter from "./presenters/RandomizePresenter.js";
 import AdvancedSearchPresenter from "./presenters/AdvancedSearchPresenter";
 import SearchResultsPresenter from "./presenters/SearchResultsPresenter";
 import CategoryResultsPresenter from "./presenters/CategoryResultPresenter";
+import { HeadingFour } from "./components/Headings";
 
 function App(props) {
   return (
@@ -34,7 +35,7 @@ function App(props) {
         <Route path="/search" element={<AdvancedSearchPresenter />}></Route>
         <Route path="/randomize" element={<RandomizePresenter />}></Route>
         <Route path="/favorites" element={<div />}></Route>
-        <Route path="*" element={<h1>NOT FOUND</h1>}></Route>
+        <Route path="*" element={<HeadingFour>DU ÄR FKN BARSTOPPAD</HeadingFour>}></Route>
       </Routes>
     </>
   );

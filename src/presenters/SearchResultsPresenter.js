@@ -21,7 +21,14 @@ export default function SearchResultsPresenter(props) {
 
   //Here props will be used instead of placeholder "drinks" const later
   return (
-    <div>
+    <div 
+    style={{
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "center",
+      alignItems: "center",
+    }}>
+    
       {promiseNoData(promiseState) || (
         <SearchResultsView drinks={promiseState.data.drinks} />
       )}
