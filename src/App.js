@@ -29,7 +29,7 @@ function App(props) {
           element={<SearchResultsPresenter />}
         ></Route>
         <Route
-          path="/categoryResult/:userInput"
+          path="/categoryResult/:alcohol"
           element={<CategoryResultsPresenter />}
         ></Route>
         <Route path="/search" element={<AdvancedSearchPresenter />}></Route>

@@ -5,7 +5,7 @@ import { filterDrinkByIngridient } from "../DrinkSource";
 import promiseNoData from "../promiseNoData";
 import { useParams } from "react-router-dom";
 
-export default function SearchResultsPresenter(props) {
+export default function CategoryResultsPresenter(props) {
   const [promiseState] = React.useState({});
   const [, reRender] = React.useState();
 
@@ -13,10 +13,10 @@ export default function SearchResultsPresenter(props) {
     reRender({});
   }
 
-  const { userInput } = useParams();
+  const { alcohol } = useParams();
 
   React.useEffect(() => {
-    resolvePromise(filterDrinkByIngridient(userInput), promiseState, notifyACB);
+    resolvePromise(filterDrinkByIngridient(alcohol), promiseState, notifyACB);
   }, []);
 
   return (

@@ -16,8 +16,14 @@ export default function SearchResultsView(props) {
     );*/
     return (
       <div className="drinkCardContainer">
-        <DrinkCard name={drink.strDrink} img={drink.strDrinkThumb} />
+        <DrinkCard
+          name={drink.strDrink}
+          img={drink.strDrinkThumb}
+          id={drink.idDrink}
+          navigation={"drinkDetails"}
+        />
         <Spacer size={2} />
+        {console.log(drink)}
       </div>
     );
   }
