@@ -5,6 +5,11 @@ import "../components/css/Checkbox.css";
 
 export default function Checkbox(props) {
   const [checked, setChecked] = React.useState(false);
+
+  function userSelectsACB() {
+    props.action(props.label);
+  }
+
   return checked ? (
     <div className="options" onClick={() => setChecked(!checked)}>
       <METAText style={{ color: "white" }}>{props.label}</METAText>
