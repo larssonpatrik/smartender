@@ -38,7 +38,7 @@ export default function AdvancedSearchPresenter() {
       </METAText>
       <Spacer size={3} />
       <DropDownView />
-      <Spacer size={5} />
+      <Spacer size={3} />
       {promiseNoData(promiseState) || (
         <SearchResultsView drinks={promiseState.data.drinks} />
       )}
