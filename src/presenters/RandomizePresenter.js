@@ -12,6 +12,15 @@ import { METAText } from "../components/TextBodies";
 export default function DrinkDetailsPresenter(props) {
   const [promiseState] = React.useState({});
   const [, reRender] = React.useState();
+  const [favorites, setFavorites] = React.useState(props.model.favoriteDrinks);
+
+  function addToFavoritesACB(id) {
+    props.model.addToFavorites(id);
+  }
+
+  function removeFromFavoritesACB(id) {
+    props.model.removeFromFavorites(id);
+  }
 
   function notifyACB() {
     reRender({});
@@ -44,7 +53,12 @@ export default function DrinkDetailsPresenter(props) {
       <Spacer size={3} />
       <PrimaryButton action={randomizeDrinkACB}>Randomize again!</PrimaryButton>
       {promiseNoData(promiseState) || (
-        <DrinkDetailsView drinks={promiseState.data.drinks} />
+        <DrinkDetailsView
+          drinks={promiseState.data.drinks}
+          addFavoriteFunc={addToFavoritesACB}
+          removeFavoriteFunc={removeFromFavoritesACB}
+          favorites={favorites}
+        />
       )}
     </div>
   );

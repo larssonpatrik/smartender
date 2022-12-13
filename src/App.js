@@ -34,7 +34,10 @@ function App(props) {
           element={<CategoryResultsPresenter />}
         ></Route>
         <Route path="/search" element={<AdvancedSearchPresenter />}></Route>
-        <Route path="/randomize" element={<RandomizePresenter />}></Route>
+        <Route
+          path="/randomize"
+          element={<RandomizePresenter model={props.model} />}
+        ></Route>
         <Route
           path="/favorites"
           element={<FavoritesPresenter model={props.model} />}
