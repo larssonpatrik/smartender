@@ -23,7 +23,7 @@ function App(props) {
         <Route path="/" element={<HomePresenter />}></Route>
         <Route
           path="/drinkDetails/:id"
-          element={<DrinkDetailsPresenter />}
+          element={<DrinkDetailsPresenter model={props.model} />}
         ></Route>
         <Route
           path="/searchResult/:searchInput"
@@ -35,7 +35,10 @@ function App(props) {
         ></Route>
         <Route path="/search" element={<AdvancedSearchPresenter />}></Route>
         <Route path="/randomize" element={<RandomizePresenter />}></Route>
-        <Route path="/favorites" element={<FavoritesPresenter/>}></Route>
+        <Route
+          path="/favorites"
+          element={<FavoritesPresenter model={props.model} />}
+        ></Route>
         <Route
           path="*"
           element={<HeadingFour>DU ÄR FKN BARSTOPPAD</HeadingFour>}
