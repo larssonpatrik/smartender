@@ -6,14 +6,15 @@ import { HeadingTwo } from "../components/Headings";
 export default function DrinkSlideshowView(props) {
   let drinkArray = props.data.drinks;
 
-  function renderDrinkCard(drink, i) {
-    function onUserClickOnCard() {
-      props.clickOnCard(drink.strDrink);
-    }
-
+  function renderDrinkCardCB(drink, i) {
     return (
-      <div className="DrinkCardItem" key={i} onClick={onUserClickOnCard}>
-        <DrinkCard name={drink.strDrink} img={drink.strDrinkThumb} />
+      <div className="DrinkCardItem" key={i}>
+        <DrinkCard
+          name={drink.strDrink}
+          img={drink.strDrinkThumb}
+          id={drink.idDrink}
+          navigation={"drinkDetails"}
+        />
         <Spacer size={2} />
       </div>
     );
@@ -21,10 +22,13 @@ export default function DrinkSlideshowView(props) {
 
   return (
     <div className="SlideshowContainer">
-      <HeadingTwo>{props.title}</HeadingTwo>
+      <div style={{ display: "flex"}}>
+        <Spacer size={2} />
+        <HeadingTwo>{props.title}</HeadingTwo>
+      </div>
       <Spacer size={0} />
       <div className="DrinkCardContainer">
-        {drinkArray.map(renderDrinkCard)};
+        {drinkArray.map(renderDrinkCardCB)};
       </div>
     </div>
   );

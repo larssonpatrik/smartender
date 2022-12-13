@@ -7,7 +7,10 @@ export default function promiseNoData(promiseState) {
         return <div>{promiseState.error.toString()}</div>;
       } else {
         return (
-          <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif" />
+          <img
+            src="https://media0.giphy.com/media/cLYP8GMcNMWL3kaJ00/giphy.gif?cid=790b7611305c025451ee0d4517743606a7098edd22000ffb&rid=giphy.gif&ct=s"
+            width={500}
+          />
         );
       }
     } else if (!promiseState.promise) {

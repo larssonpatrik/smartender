@@ -3,14 +3,16 @@ import promiseNoData from "../promiseNoData";
 
 import React from "react";
 import resolvePromise from "../resolvePromise";
-import { getDrinkById } from "../DrinkSource";
-import { useParams } from "react-router-dom";
+import { getRandomDrink } from "../DrinkSource";
+import { PrimaryButton } from "../components/Buttons";
+import Spacer from "../components/Spacer";
+import { HeadingFour } from "../components/Headings";
+import { METAText } from "../components/TextBodies";
 
 export default function DrinkDetailsPresenter(props) {
   const [promiseState] = React.useState({});
   const [, reRender] = React.useState();
   const [favorites, setFavorites] = React.useState(props.model.favoriteDrinks);
-  const [activeFavorite, setActiveFavorite] = React.useState();
 
   function addToFavoritesACB(id) {
     props.model.addToFavorites(id);
@@ -20,31 +22,17 @@ export default function DrinkDetailsPresenter(props) {
     props.model.removeFromFavorites(id);
   }
 
-  function observersACB() {
-    setFavorites(props.model.favoriteDrinks);
-  }
-
-  function wasCreatedACB() {
-    resolvePromise(getDrinkById(id), promiseState, notifyACB);
-
-    props.model.addObserver(observersACB);
-    console.log("COMPONENT INITIALIZED");
-
-    function isTakenDownACB() {
-      props.model.removeObserver(observersACB);
-      console.log("COMPONENT TAKEN DOWN");
-    }
-
-    return isTakenDownACB;
-  }
-
   function notifyACB() {
     reRender({});
   }
 
-  const { id } = useParams();
+  function randomizeDrinkACB() {
+    resolvePromise(getRandomDrink(), promiseState, notifyACB);
+  }
 
-  React.useEffect(wasCreatedACB, []);
+  React.useEffect(() => {
+    resolvePromise(getRandomDrink(), promiseState, notifyACB);
+  }, []);
 
   return (
     <div
@@ -55,6 +43,15 @@ export default function DrinkDetailsPresenter(props) {
         alignItems: "center",
       }}
     >
+      <Spacer size={2} />
+
+      <HeadingFour style={{ textAlign: "center" }}>Randomizer</HeadingFour>
+      <Spacer size={0} />
+      <METAText style={{ textAlign: "center" }}>
+        The drink selected just for you!
+      </METAText>
+      <Spacer size={3} />
+      <PrimaryButton action={randomizeDrinkACB}>Randomize again!</PrimaryButton>
       {promiseNoData(promiseState) || (
         <DrinkDetailsView
           drinks={promiseState.data.drinks}
