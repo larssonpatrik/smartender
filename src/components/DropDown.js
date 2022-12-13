@@ -1,8 +1,9 @@
 import React from "react";
-import { BiCheckbox } from "react-icons/bi";
+import { BiCheckbox, BiCheckboxChecked } from "react-icons/bi";
 import { METAText } from "./TextBodies";
 import "../components/css/DropDown.css";
 import Spacer from "./Spacer";
+import Checkbox from "./Checkbox";
 
 export default function DropDown(props) {
   let keys = Object.keys(props.data);
@@ -10,10 +11,7 @@ export default function DropDown(props) {
   function renderOptionsCB(ingr, i) {
     return (
       <>
-        <div className="options" style={{ color: "white" }} key={i}>
-          <METAText>{ingr}</METAText>
-          <BiCheckbox className="checkbox" />
-        </div>
+        <Checkbox label={ingr} />
         <Spacer size={3} />
       </>
     );

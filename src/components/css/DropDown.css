@@ -1,13 +1,4 @@
 .optionContainer {
   display: flex;
-  width: 95vw;
-}
-
-.options {
-  display: flex;
-  align-items: center;
-}
-
-.checkbox {
-  font-size: 28px;
+  justify-content: center;
 }

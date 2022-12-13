@@ -129,7 +129,7 @@ export default function DropDownView(props) {
       "Powdered Sugar",
       "Sugar",
     ],
-    syrup: [
+    Syrup: [
       "Sugar Syrup",
       "Agave Syrup",
       "Banana Syrup",
