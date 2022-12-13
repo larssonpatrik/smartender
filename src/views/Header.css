@@ -7,10 +7,16 @@
 }
 
 .link {
+  display: flex;
+  align-items: center;
   text-decoration: none;
   font-size: 20px;
   font-weight: 400;
   color: whitesmoke;
+}
+
+.link:hover {
+  color: rgb(162, 123, 177);
 }
 
 .Header {
@@ -29,3 +35,7 @@
   cursor: pointer;
 }
 
+.Img {
+  width: 200px;
+  height: auto;
+}

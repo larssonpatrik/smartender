@@ -3,7 +3,7 @@ body {
 }
 
 .detailsContainer {
-  margin: 100px;
+  margin: 60px 100px;
   display: flex;
   flex-direction: row;
   border-style: solid;

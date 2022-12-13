@@ -1,21 +1,30 @@
 .PrimaryButton {
-    border-radius: 8px;
-    border: none;
-    height: 30px;
-    width: 100px;
-    font-size: 20px;
-    background-color: rgb(162,123,177);
-    color: rgb(22,14,38);
+  padding: 4px 12px;
+  border-radius: 8px;
+  border: none;
+  font-size: 20px;
+  background-color: rgb(162, 123, 177);
+  color: rgb(22, 14, 38);
+  cursor: pointer;
 }
 
 .SecondaryButton {
-    border-radius: 8px;
-    height: 30px;
-    width: 100px;
-    font-size: 20px;
-    background-color: transparent;
-    color: whitesmoke;
-    border: 3px solid rgb(162,123,177);
+  border-radius: 8px;
+  height: 30px;
+  width: 100px;
+  font-size: 20px;
+  background-color: transparent;
+  color: whitesmoke;
+  border: 3px solid rgb(162, 123, 177);
 }
 
-
+.TirtiaryButton {
+  padding: 4px 12px;
+  border-radius: 8px;
+  border: none;
+  font-size: 20px;
+  background-color: rgb(162, 123, 177);
+  color: rgb(22, 14, 38);
+  display: flex;
+  align-items: center;
+}

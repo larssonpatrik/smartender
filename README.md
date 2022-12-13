@@ -1,3 +1,24 @@
+# Smartender
+
+Group: 55 Greta Jonsson, Patrik Larsson, Samuel Ribaric, Felicia Atterling
+
+## Description of project
+
+Smartender is an app for hobby bartenders. At the end of the project we want smartender to allow users to search for drinks, browse through categories, get a randomized drink suggestion and be able to search for drinks based on ingredients you already have at home.
+
+## What we have done
+
+We have finished the lay out of the app but have not added all functionality yet.
+In the current verison of smartender, the user can see most popular drinks and latsest drinks on the home page and also get a randomized drink.
+
+## What we still plan to do
+
+We are currently working on searching for drinks by name and the advanced search, where the user will be able to search for a drink based on ingredients you have at home and be able to filter the search for example with type of glass. We are also working on connecting all drink cards on the home page to a drink details view, the same view you get from 'Randomize'. The next step we need to work on is when you click on the Vodka, Rum and Gin cards. Clicking on those cards will send the user to a view with all drinks containing that liquor. We would also like to give the users the ability to sign up/ log in and save their favourite drinks.
+
+## Project file structure
+
+We are working with views and presenters. Each presenter is often built up of variuos views and the views are often built up of various components. We have created our own components for heading, buttons, text bodies, cards, etc. Anything that we need to reuse many times. We also have files to handle the promise and call the API. The App.js is where we do the routing and have the structure of our app.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

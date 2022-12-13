@@ -1,9 +1,12 @@
 import { HeadingFour } from "./Headings";
 import "./css/CategoryCard.css";
+import { useNavigate } from "react-router-dom";
 
 export default function CategoryCard(props) {
+  const navigate = useNavigate();
+
   function onUserClickOnCardACB() {
-    props.onClickCard(props.name);
+    props.clickOnCard(navigate("/categoryResult/" + props.name));
   }
 
   return (

@@ -1,9 +1,14 @@
 import React from "react";
 import resolvePromise from "../resolvePromise";
-import { filterDrinkByIngridient, searchDrinkByName } from "../DrinkSource";
+import {
+  filterDrinkByIngridient,
+  getLatestDrinks,
+  getPopularDrinks,
+  searchDrinkByName,
+} from "../DrinkSource";
 import promiseNoData from "../promiseNoData";
 
-import { SearchForm } from "../components/Forms";
+import { SearchForm } from "../components/SerchForm";
 import Spacer from "../components/Spacer";
 import Header from "../views/headerView";
 import DrinkSlideShowView from "../views/DrinkSlideshowView.js";
@@ -17,7 +22,7 @@ export default function HomePresenter(props) {
   const [CategoryCardPromiseState] = React.useState({});
 
   const [popularDrinksPromiseState] = React.useState({});
-  const [ginDrinksPromiseState] = React.useState({});
+  const [latestDrinksPromiseState] = React.useState({});
   const [searchQuery, setSearchQuery] = React.useState({});
 
   const [, reRender] = React.useState();
@@ -36,6 +41,7 @@ export default function HomePresenter(props) {
       CategoryCardPromiseState,
       notifyACB
     );
+    alert("Check console for result!");
     console.log(CategoryCardPromiseState);
   }
 
@@ -49,17 +55,14 @@ export default function HomePresenter(props) {
       testSearchPromiseState,
       notifyACB
     );
+    alert("Check console for result!");
     console.log(testSearchPromiseState);
   }
 
   React.useEffect(() => {
-    resolvePromise(
-      searchDrinkByName("vodka"),
-      popularDrinksPromiseState,
-      notifyACB
-    );
+    resolvePromise(getPopularDrinks(), popularDrinksPromiseState, notifyACB);
 
-    resolvePromise(searchDrinkByName("Gin"), ginDrinksPromiseState, notifyACB);
+    resolvePromise(getLatestDrinks(), latestDrinksPromiseState, notifyACB);
   }, []);
 
   return (
@@ -70,15 +73,11 @@ export default function HomePresenter(props) {
         justifyContent: "center",
       }}
     >
-      <Spacer size={3} />
-      <Header />
-      <Spacer size={3} />
       <SearchForm onInputChange={userInputChange} onSearch={onSearch} />
       <Spacer size={6} />
       <HeadingFour style={{ textAlign: "center" }}>
         Welcome to Smartender!
       </HeadingFour>
-
       <Spacer size={0} />
       <METAText style={{ textAlign: "center" }}>
         An extensive collection of drink recipes online. Here you will find
@@ -90,6 +89,7 @@ export default function HomePresenter(props) {
           display: "flex",
           flexDirection: "row",
           justifyContent: "center",
+          alignItems: "center"
         }}
       >
         <CategoryCard
@@ -111,7 +111,7 @@ export default function HomePresenter(props) {
           onClickCard={clickOnCategoryCardACB}
         />
       </div>
-      <Spacer size={6}/>
+      <Spacer size={6} />
       {promiseNoData(popularDrinksPromiseState) || (
         <DrinkSlideShowView
           title="Popular Drinks"
@@ -119,11 +119,20 @@ export default function HomePresenter(props) {
           clickOnCard={clickOnDrinkCardACB}
         />
       )}
+
       <Spacer size={3} />
-      {promiseNoData(ginDrinksPromiseState) || (
+      {promiseNoData(latestDrinksPromiseState) || (
         <DrinkSlideShowView
-          title="Gin Drinks"
-          data={ginDrinksPromiseState.data}
+          title="New kids on the block"
+          data={latestDrinksPromiseState.data}
+          clickOnCard={clickOnDrinkCardACB}
+        />
+      )}
+      <Spacer size={3} />
+      {promiseNoData(latestDrinksPromiseState) || (
+        <DrinkSlideShowView
+          title="Developers picks"
+          data={latestDrinksPromiseState.data}
           clickOnCard={clickOnDrinkCardACB}
         />
       )}

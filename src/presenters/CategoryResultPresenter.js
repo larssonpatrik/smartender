@@ -1,12 +1,11 @@
-import DrinkDetailsView from "../views/DrinkDetailsView";
-import promiseNoData from "../promiseNoData";
-
+import SearchResultsView from "../views/SearchResultsView";
 import React from "react";
 import resolvePromise from "../resolvePromise";
-import { getDrinkById } from "../DrinkSource";
+import { filterDrinkByIngridient } from "../DrinkSource";
+import promiseNoData from "../promiseNoData";
 import { useParams } from "react-router-dom";
 
-export default function DrinkDetailsPresenter(props) {
+export default function CategoryResultsPresenter(props) {
   const [promiseState] = React.useState({});
   const [, reRender] = React.useState();
 
@@ -14,10 +13,10 @@ export default function DrinkDetailsPresenter(props) {
     reRender({});
   }
 
-  const { id } = useParams();
+  const { alcohol } = useParams();
 
   React.useEffect(() => {
-    resolvePromise(getDrinkById(id), promiseState, notifyACB);
+    resolvePromise(filterDrinkByIngridient(alcohol), promiseState, notifyACB);
   }, []);
 
   return (
@@ -29,7 +28,7 @@ export default function DrinkDetailsPresenter(props) {
       alignItems: "center",
     }}>
       {promiseNoData(promiseState) || (
-        <DrinkDetailsView drinks={promiseState.data.drinks} />
+        <SearchResultsView drinks={promiseState.data.drinks} />
       )}
     </div>
   );

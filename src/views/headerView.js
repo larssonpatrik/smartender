@@ -1,4 +1,5 @@
 //npm install react-icons --save
+import { Link } from "react-router-dom";
 import {
   BiSearch,
   BiHeart,
@@ -13,33 +14,43 @@ import "../views/Header.css";
 import "../components/css/Headings.css";
 import Spacer from "../components/Spacer";
 import { PrimaryButton, SecondaryButton } from "../components/Buttons";
+import { HeadingThree } from "../components/Headings";
 
 export default function Header(props) {
   return (
     <div style={{ display: "flex", justifyContent: "center" }}>
       <div className="Header">
-        <p style={{ color: "whitesmoke" }}>Logga</p>
+        <Link to="/">
+          <img className="Img" src="https://iili.io/HC6Ypqb.png" alt="logo" />
+        </Link>
         <div className="Options">
           <div>
-            <a className="link" href="#">
+            <Link className="link" to="/">
               <BiHome />
-              Home
-            </a>
+              <Spacer size={0} />
+              <HeadingThree>Home</HeadingThree>
+            </Link>
           </div>
           <div>
-            <a className="link" href="#">
-              <BiSearch /> Advanced search
-            </a>
+            <Link className="link" to="/search">
+              <BiSearch />
+              <Spacer size={0} />
+              <HeadingThree>Advanced search</HeadingThree>
+            </Link>
           </div>
           <div>
-            <a className="link" href="#">
-              <BiDrink /> Randomize
-            </a>
+            <Link className="link" to="/randomize">
+              <BiDrink />
+              <Spacer size={0} />
+              <HeadingThree>Randomize</HeadingThree>
+            </Link>
           </div>
           <div>
-            <a className="link" href="#">
-              <BiHeart /> Favourites
-            </a>
+            <Link className="link" to="/favorites">
+              <BiHeart />
+              <Spacer size={0} />
+              <HeadingThree>Favorites</HeadingThree>
+            </Link>
           </div>
         </div>
         <div className="btns">

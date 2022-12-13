@@ -3,94 +3,84 @@ import "./DrinkDetails.css";
 import { HeadingOne, HeadingTwo } from "../components/Headings";
 import { Paragraph } from "../components/TextBodies";
 import Spacer from "../components/Spacer";
-import { CategoryCard } from "../components/CategoryCard";
 
 export default function DrinkDetailsView(props) {
   //callbacks for rendering each ingredient and its image etc
   function render_ingredientsCB(drink) {
     return (
-      <>
-        <div className="detailsContainer">
-          <img
-            className="drinkImg"
-            src={drink.strDrinkThumb}
-            alt="drink"
-            height={500}
-          />
+      <div className="detailsContainer">
+        <img
+          className="drinkImg"
+          src={drink.strDrinkThumb}
+          alt="drink"
+          height={500}
+        />
 
-          <div className="content">
-            <HeadingOne>{drink.strDrink}</HeadingOne>
-            <Spacer size={3} />
+        <div className="content">
+          <HeadingOne>{drink.strDrink}</HeadingOne>
+          <Spacer size={3} />
 
-            <div className="ingredientInfo">
-              <HeadingTwo>Ingredients</HeadingTwo>
-              <Spacer size={1} />
-              <Paragraph>
-                {drink.strIngredient1}: {drink.strMeasure1}
-              </Paragraph>
-              <Paragraph>
-                {drink.strIngredient2}: {drink.strMeasure2}
-              </Paragraph>
-              <Paragraph>
-                {drink.strIngredient3}: {drink.strMeasure3}
-              </Paragraph>
-              <Paragraph>
-                {drink.strIngredient4}: {drink.strMeasure4}
-              </Paragraph>
-              <Paragraph>
-                {drink.strIngredient5
-                  ? drink.strIngredient5 + ": " + drink.strMeasure5
-                  : ""}
-              </Paragraph>
-              <Paragraph>
-                {drink.strIngredient6
-                  ? drink.strIngredient6 + ": " + drink.strMeasure6
-                  : ""}
-              </Paragraph>
-              <Paragraph>
-                {drink.strIngredient7
-                  ? drink.strIngredient7 + ": " + drink.strMeasure7
-                  : ""}
-              </Paragraph>
-              <Paragraph>
-                {drink.strIngredient8
-                  ? drink.strIngredient8 + ": " + drink.strMeasure8
-                  : ""}
-              </Paragraph>
-              <Paragraph>
-                {drink.strIngredient9
-                  ? drink.strIngredient9 + ": " + drink.strMeasure9
-                  : ""}
-              </Paragraph>
-              <Paragraph>
-                {drink.strIngredient10
-                  ? drink.strIngredient10 + ": " + drink.strMeasure10
-                  : ""}
-              </Paragraph>
-              <Spacer size={2} />
-            </div>
+          <div className="ingredientInfo">
+            {" "}
+            {/*Kolla om det finns unit också, annars står det null vilket är fult*/}
+            <HeadingTwo>Ingredients</HeadingTwo>
+            <Spacer size={1} />
+            <Paragraph>
+              {drink.strIngredient1}: {drink.strMeasure1}
+            </Paragraph>
+            <Paragraph>
+              {drink.strIngredient2}: {drink.strMeasure2}
+            </Paragraph>
+            <Paragraph>
+              {drink.strIngredient3
+                ? drink.strIngredient3 + ": " + drink.strMeasure3
+                : ""}
+            </Paragraph>
+            <Paragraph>
+              {drink.strIngredient4
+                ? drink.strIngredient4 + ": " + drink.strMeasure4
+                : ""}
+            </Paragraph>
+            <Paragraph>
+              {drink.strIngredient5
+                ? drink.strIngredient5 + ": " + drink.strMeasure5
+                : ""}
+            </Paragraph>
+            <Paragraph>
+              {drink.strIngredient6
+                ? drink.strIngredient6 + ": " + drink.strMeasure6
+                : ""}
+            </Paragraph>
+            <Paragraph>
+              {drink.strIngredient7
+                ? drink.strIngredient7 + ": " + drink.strMeasure7
+                : ""}
+            </Paragraph>
+            <Paragraph>
+              {drink.strIngredient8
+                ? drink.strIngredient8 + ": " + drink.strMeasure8
+                : ""}
+            </Paragraph>
+            <Paragraph>
+              {drink.strIngredient9
+                ? drink.strIngredient9 + ": " + drink.strMeasure9
+                : ""}
+            </Paragraph>
+            <Paragraph>
+              {drink.strIngredient10
+                ? drink.strIngredient10 + ": " + drink.strMeasure10
+                : ""}
+            </Paragraph>
+            <Spacer size={2} />
+          </div>
 
-            <div className="instructions">
-              <HeadingTwo>Instructions</HeadingTwo>
-              <Spacer size={1} />
-              {drink.strInstructions}
-            </div>
+          <div className="instructions">
+            <HeadingTwo>Instructions</HeadingTwo>
+            <Spacer size={1} />
+            <Paragraph>{drink.strInstructions}</Paragraph>
           </div>
         </div>
-
-        <CategoryCard
-          name="Gin"
-          img="https://mir-s3-cdn-cf.behance.net/project_modules/fs/d3861425776209.5634a914d94d5.jpg"
-        />
-        <CategoryCard
-          name="Vodka"
-          img="https://megaricos.com/wp-content/uploads/2021/04/shutterstock_653237029.jpg"
-        />
-        <CategoryCard
-          name="Rum"
-          img="http://consumatorium.com/wp-content/uploads/2015/08/Tiki-Drinks-2015-08-04-45_028a019e0_6945.jpg"
-        />
-      </>
+      </div>
     );
   }
 
