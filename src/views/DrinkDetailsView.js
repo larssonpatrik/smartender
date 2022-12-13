@@ -31,7 +31,6 @@ export default function DrinkDetailsView(props) {
 
   return (
     <div>
-      {console.log("PROPS", props)}
       <div className="detailsContainer">
         <img
           className="drinkImg"

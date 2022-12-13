@@ -17,8 +17,6 @@ export default function FavoritesPresenter(props) {
     reRender({});
   }
 
-  console.log("model", props.model);
-
   function testACB() {
     return Promise.all(
       props.model.favoriteDrinks.map((id) => {
@@ -37,8 +35,8 @@ export default function FavoritesPresenter(props) {
       style={{
         display: "flex",
         flexDirection: "column",
-        justifyContent: "center",
         alignItems: "center",
+        height: "100vh",
       }}
     >
       <Spacer size={2} />
