@@ -14,7 +14,7 @@ function Login() {
       if (user.username == username && user.password == password) {
         var token = generateToken(username);
         sessionStorage.setItem("authToken", token);
-        window.location.href = "dashboard.html";
+        //Application state should change to "logged in" preferably in model
       } else {
         return (
           <HeadingThree>

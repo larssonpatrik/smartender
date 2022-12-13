@@ -23,6 +23,7 @@ function SignUp()
           username: username,
           email: email,
           password: password,
+          //Logged in automatily after sign up
         };
 
         database.ref("users/" + username).set(user);

@@ -1,5 +1,6 @@
 class UserModel {
-  constructor(favourites = []) {
+  constructor(favourites = [], logged_in) {
     this.favouritedrinks = favourites;
+    this.logged_in = false;
   }
 }
