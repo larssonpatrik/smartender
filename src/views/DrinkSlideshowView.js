@@ -6,7 +6,7 @@ import { HeadingTwo } from "../components/Headings";
 export default function DrinkSlideshowView(props) {
   let drinkArray = props.data.drinks;
 
-  function renderDrinkCard(drink, i) {
+  function renderDrinkCardCB(drink, i) {
     return (
       <div className="DrinkCardItem" key={i}>
         <DrinkCard
@@ -28,7 +28,7 @@ export default function DrinkSlideshowView(props) {
       </div>
       <Spacer size={0} />
       <div className="DrinkCardContainer">
-        {drinkArray.map(renderDrinkCard)};
+        {drinkArray.map(renderDrinkCardCB)};
       </div>
     </div>
   );

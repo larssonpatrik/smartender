@@ -11,6 +11,7 @@ import AdvancedSearchPresenter from "./presenters/AdvancedSearchPresenter";
 import SearchResultsPresenter from "./presenters/SearchResultsPresenter";
 import CategoryResultsPresenter from "./presenters/CategoryResultPresenter";
 import { HeadingFour } from "./components/Headings";
+import FavoritesPresenter from "./presenters/FavoritesPresenter";
 
 function App(props) {
   return (
@@ -34,7 +35,7 @@ function App(props) {
         ></Route>
         <Route path="/search" element={<AdvancedSearchPresenter />}></Route>
         <Route path="/randomize" element={<RandomizePresenter />}></Route>
-        <Route path="/favorites" element={<div />}></Route>
+        <Route path="/favorites" element={<FavoritesPresenter/>}></Route>
         <Route
           path="*"
           element={<HeadingFour>DU ÄR FKN BARSTOPPAD</HeadingFour>}
