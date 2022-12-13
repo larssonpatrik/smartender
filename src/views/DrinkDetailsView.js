@@ -3,6 +3,8 @@ import "./DrinkDetails.css";
 import { HeadingOne, HeadingTwo } from "../components/Headings";
 import { Paragraph } from "../components/TextBodies";
 import Spacer from "../components/Spacer";
+import {FaHeart, FaRegHeart} from "react-icons/fa";
+
 
 export default function DrinkDetailsView(props) {
   //callbacks for rendering each ingredient and its image etc
@@ -19,6 +21,7 @@ export default function DrinkDetailsView(props) {
         <div className="content">
           <HeadingOne>{drink.strDrink}</HeadingOne>
           <Spacer size={3} />
+         
 
           <div className="ingredientInfo">
             {" "}
@@ -79,6 +82,9 @@ export default function DrinkDetailsView(props) {
             <Spacer size={1} />
             <Paragraph>{drink.strInstructions}</Paragraph>
           </div>
+        </div>
+        <div className="heart">
+          <FaRegHeart/>
         </div>
       </div>
     );

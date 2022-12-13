@@ -24,3 +24,9 @@ body {
   border-top-left-radius: 13px;
   border-bottom-left-radius: 13px;
 }
+
+.heart {
+  margin: 20px;
+  font-size: 40px;
+  color: whitesmoke;
+}
