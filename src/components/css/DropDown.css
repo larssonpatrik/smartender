@@ -1,4 +1,19 @@
 .optionContainer {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.searchButton {
+  display: flex;
+  justify-content: center;
+}
+
+.dropDownContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 95vw;
 }

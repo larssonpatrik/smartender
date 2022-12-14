@@ -3,14 +3,21 @@ import { BiChevronDown } from "react-icons/bi";
 
 export function PrimaryButton(props) {
   return (
-    <button onClick={props.action} className="PrimaryButton">
+    <button
+      onClick={props.action}
+      className={"PrimaryButton " + props.className}
+    >
       {props.children}
     </button>
   );
 }
 
 export function SecondaryButton(props) {
-  return <button className="SecondaryButton">{props.children}</button>;
+  return (
+    <button onClick={props.action} className="SecondaryButton">
+      {props.children}
+    </button>
+  );
 }
 
 export function TirtiaryButton(props) {
