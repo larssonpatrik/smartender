@@ -1,15 +1,15 @@
-import firebase from "firebase/app";
-import "firebase/auth";
+import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
+//import firebaseConfig from "./firebaseConfig";
 
-const app = firebase.initializeApp({
-  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
-  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
-  databaseURL: process.env.REACT_APP_FIREBASE_DATABASE_URL,
-  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
-  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
-  appId: process.env.REACT_APP_FIREBASE_APP_ID,
-});
+const firebaseConfig = {
+  apiKey: "AIzaSyA23h9kgQFxFR1aBJe30o_Unye_deQ9JPM",
+  authDomain: "smartender-a52c9.firebaseapp.com",
+  projectId: "smartender-a52c9",
+  storageBucket: "smartender-a52c9.appspot.com",
+  messagingSenderId: "424256854993",
+  appId: "1:424256854993:web:4b27eab269bde611fadef0",
+};
 
-export const auth = app.auth();
-export default app;
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
