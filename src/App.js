@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-
+import { login } from "./Login.js";
 import HomePresenter from "./presenters/HomePresenter";
 import Header from "./views/headerView";
 import Spacer from "./components/Spacer";
@@ -14,6 +14,7 @@ import { HeadingFour } from "./components/Headings";
 import FavoritesPresenter from "./presenters/FavoritesPresenter";
 
 function App(props) {
+  login("makkapakka@gmail.com", "zoomies")
   return (
     <>
       <Spacer size={3} />
