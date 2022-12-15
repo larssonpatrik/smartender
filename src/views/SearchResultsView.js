@@ -22,9 +22,23 @@ export default function SearchResultsView(props) {
 
   return props.drinks ? (
     <>
-      <HeadingTwo>Results</HeadingTwo>
-      <Spacer size={2} />
-      <div className="resultContainer">{props.drinks.map(render_drinkCB)}</div>
+      {props.drinks.length === 0 || (
+        <>
+          <HeadingTwo>{props.title}</HeadingTwo>
+          <Spacer size={2} />{" "}
+        </>
+      )}
+
+      <div
+        className="resultContainer"
+        style={
+          props.drinks.length <= 4
+            ? { justifyContent: "flex-start" }
+            : { justifyContent: "space-between" }
+        }
+      >
+        {props.drinks.map(render_drinkCB)}
+      </div>
     </>
   ) : (
     <div style={{ height: "100vh" }}>

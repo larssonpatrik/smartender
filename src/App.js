@@ -12,6 +12,7 @@ import SearchResultsPresenter from "./presenters/SearchResultsPresenter";
 import CategoryResultsPresenter from "./presenters/CategoryResultPresenter";
 import { HeadingFour } from "./components/Headings";
 import FavoritesPresenter from "./presenters/FavoritesPresenter";
+import FooterView from "./views/FooterView";
 
 function App(props) {
   return (
@@ -47,6 +48,7 @@ function App(props) {
           element={<HeadingFour>DU ÄR FKN BARSTOPPAD</HeadingFour>}
         ></Route>
       </Routes>
+      <FooterView />
     </>
   );
 }

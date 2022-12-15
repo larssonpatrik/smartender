@@ -92,7 +92,10 @@ export default function AdvancedSearchPresenter() {
       />
       <Spacer size={4} />
       {promiseNoData(resultsPromiseState) || (
-        <SearchResultsView drinks={resultsPromiseState.data.drinks} />
+        <SearchResultsView
+          drinks={resultsPromiseState.data.drinks}
+          title="Results"
+        />
       )}
       <Spacer size={5} />
     </div>

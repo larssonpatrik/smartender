@@ -17,7 +17,7 @@ export default function FavoritesPresenter(props) {
     reRender({});
   }
 
-  function testACB() {
+  function getFavoriteDrinks() {
     return Promise.all(
       props.model.favoriteDrinks.map((id) => {
         return getDrinkById(id).then((obj) => obj.drinks[0]);
@@ -26,7 +26,7 @@ export default function FavoritesPresenter(props) {
   }
 
   React.useEffect(() => {
-    resolvePromise(testACB(), promiseState, notifyACB);
+    resolvePromise(getFavoriteDrinks(), promiseState, notifyACB);
   }, []);
 
   //Here props will be used instead of placeholder "drinks" const later
