@@ -39,6 +39,7 @@ export default function SearchResultsView(props) {
       >
         {props.drinks.map(render_drinkCB)}
       </div>
+      <Spacer size={4} />
     </>
   ) : (
     <div style={{ height: "100vh" }}>
