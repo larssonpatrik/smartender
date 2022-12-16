@@ -63,6 +63,10 @@ export function filterDrinkByIngridient(searchQuery) {
   return APICall(endpoints.filter, { i: searchQuery });
 }
 
+export function filterDrinkByMultiIngridient(searchQuery) {
+  return APICall(endpoints.filter, { i: searchQuery });
+}
+
 export function filterDrinkByCategory(searchQuery) {
   return APICall(endpoints.filter, { c: searchQuery });
 }

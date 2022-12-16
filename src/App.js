@@ -17,7 +17,38 @@ import SignupPresenter from "./presenters/SignupPresenter.js";
 function App(props) {
   return (
     <>
-      <SignupPresenter />
+      <Spacer size={3} />
+      <Header />
+      <Spacer size={3} />
+      <Routes>
+        <Route path="/" element={<HomePresenter />}></Route>
+        <Route
+          path="/drinkDetails/:id"
+          element={<DrinkDetailsPresenter model={props.model} />}
+        ></Route>
+        <Route
+          path="/searchResult/:searchInput"
+          element={<SearchResultsPresenter />}
+        ></Route>
+        <Route
+          path="/categoryResult/:alcohol"
+          element={<CategoryResultsPresenter />}
+        ></Route>
+        <Route path="/search" element={<AdvancedSearchPresenter />}></Route>
+        <Route
+          path="/randomize"
+          element={<RandomizePresenter model={props.model} />}
+        ></Route>
+        <Route
+          path="/favorites"
+          element={<FavoritesPresenter model={props.model} />}
+        ></Route>
+        <Route
+          path="*"
+          element={<HeadingFour>DU ÄR FKN BARSTOPPAD</HeadingFour>}
+        ></Route>
+      </Routes>
+      <FooterView />
     </>
   );
 }

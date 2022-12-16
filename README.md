@@ -9,7 +9,7 @@ Smartender is an app for hobby bartenders. At the end of the project we want sma
 ## What we have done
 
 We have finished the lay out of the app but have not added all functionality yet.
-In the current verison of smartender, the user can see most popular drinks and latsest drinks on the home page and also get a randomized drink.
+In the current verison of smartender, the user can see most popular drinks and latest drinks on the home page and also get a randomized drink.
 
 ## What we still plan to do
 

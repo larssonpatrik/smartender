@@ -1,0 +1,9 @@
+.options {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.checkbox {
+  font-size: 28px;
+}

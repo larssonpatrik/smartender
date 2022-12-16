@@ -1,14 +1,15 @@
+import FavoritesView from "../views/SearchResultsView";
 import SearchResultsView from "../views/SearchResultsView";
-import React from "react";
+import React, { useState } from "react";
 import resolvePromise from "../resolvePromise";
-import { searchDrinkByName } from "../DrinkSource";
+import { getDrinkById } from "../DrinkSource";
 import promiseNoData from "../promiseNoData";
 import { useParams } from "react-router-dom";
-import Spacer from "../components/Spacer";
 import { HeadingFour } from "../components/Headings";
+import Spacer from "../components/Spacer";
 import { METAText } from "../components/TextBodies";
 
-export default function SearchResultsPresenter(props) {
+export default function FavoritesPresenter(props) {
   const [promiseState] = React.useState({});
   const [, reRender] = React.useState();
 
@@ -16,31 +17,39 @@ export default function SearchResultsPresenter(props) {
     reRender({});
   }
 
-  const { searchInput } = useParams();
+  function getFavoriteDrinks() {
+    return Promise.all(
+      props.model.favoriteDrinks.map((id) => {
+        return getDrinkById(id).then((obj) => obj.drinks[0]);
+      })
+    );
+  }
 
   React.useEffect(() => {
-    resolvePromise(searchDrinkByName(searchInput), promiseState, notifyACB);
+    resolvePromise(getFavoriteDrinks(), promiseState, notifyACB);
   }, []);
 
+  //Here props will be used instead of placeholder "drinks" const later
   return (
     <div
       style={{
         display: "flex",
         flexDirection: "column",
-        justifyContent: "center",
         alignItems: "center",
+        height: "100vh",
       }}
     >
       <Spacer size={2} />
-      <HeadingFour style={{ textAlign: "center" }}>Search Results</HeadingFour>
+
+      <HeadingFour style={{ textAlign: "center" }}>Favorites</HeadingFour>
       <Spacer size={0} />
       <METAText style={{ textAlign: "center" }}>
-        This is what we managed to find for you!
+        Your absolute favorite drinks!
       </METAText>
-      <Spacer size={2} />
+      <Spacer size={3} />
 
       {promiseNoData(promiseState) || (
-        <SearchResultsView drinks={promiseState.data.drinks} />
+        <SearchResultsView drinks={promiseState.data} />
       )}
     </div>
   );
