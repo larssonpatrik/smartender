@@ -5,6 +5,7 @@
   font-size: 20px;
   background-color: rgb(162, 123, 177);
   color: rgb(22, 14, 38);
+  cursor: pointer;
 }
 
 .SecondaryButton {
