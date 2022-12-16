@@ -1,6 +1,6 @@
 import DrinkDetailsView from "../views/DrinkDetailsView";
 import promiseNoData from "../promiseNoData";
-
+import {addFavoriteToFirebase, removeFavoriteFromFirebase} from "../firebaseModel"
 import React from "react";
 import resolvePromise from "../resolvePromise";
 import { getDrinkById } from "../DrinkSource";
@@ -14,10 +14,12 @@ export default function DrinkDetailsPresenter(props) {
 
   function addToFavoritesACB(id) {
     props.model.addToFavorites(id);
+    addFavoriteToFirebase(props.model)
   }
 
   function removeFromFavoritesACB(id) {
     props.model.removeFromFavorites(id);
+    removeFavoriteFromFirebase(props.model)
   }
 
   function observersACB() {

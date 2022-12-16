@@ -8,14 +8,16 @@ import { PrimaryButton } from "../components/Buttons";
 import Spacer from "../components/Spacer";
 import { HeadingFour } from "../components/Headings";
 import { METAText } from "../components/TextBodies";
+import { addFavoriteToFirebase } from "../firebaseModel";
 
-export default function DrinkDetailsPresenter(props) {
+export default function RandomizePresenter(props) {
   const [promiseState] = React.useState({});
   const [, reRender] = React.useState();
   const [favorites, setFavorites] = React.useState(props.model.favoriteDrinks);
 
   function addToFavoritesACB(id) {
     props.model.addToFavorites(id);
+    addFavoriteToFirebase();
   }
 
   function removeFromFavoritesACB(id) {
