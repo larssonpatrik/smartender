@@ -25,7 +25,6 @@ export default function SignInPresenter(props) {
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
-        props.history.push("");
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -38,7 +37,7 @@ export default function SignInPresenter(props) {
     <div>
       <SignInView
         inputEmail={onInputEmailChangeACB}
-        inputPasssword={onInputPasswordChange}
+        inputPassword={onInputPasswordChange}
         newUser={signInUserInFirebaseACB}
         userPassword={password}
         userEmail={email}
