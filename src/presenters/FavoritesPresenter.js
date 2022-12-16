@@ -8,6 +8,7 @@ import { useParams } from "react-router-dom";
 import { HeadingFour } from "../components/Headings";
 import Spacer from "../components/Spacer";
 import { METAText } from "../components/TextBodies";
+import {getAuth} from "firebase/auth"
 
 export default function FavoritesPresenter(props) {
   const [promiseState] = React.useState({});
@@ -24,6 +25,8 @@ export default function FavoritesPresenter(props) {
       })
     );
   }
+
+  const user = getAuth().currentUser
 
   React.useEffect(() => {
     resolvePromise(getFavoriteDrinks(), promiseState, notifyACB);
@@ -47,7 +50,7 @@ export default function FavoritesPresenter(props) {
         Your absolute favorite drinks!
       </METAText>
       <Spacer size={3} />
-
+      {console.log(user)}
       {promiseNoData(promiseState) || (
         <SearchResultsView drinks={promiseState.data} />
       )}

@@ -1,6 +1,7 @@
 import React from "react";
 import "./SignForm.css";
 import "../components/css/Headings.css";
+import { PrimaryButton } from "../components/Buttons";
 
 export default function SignupView(props) {
   return (
@@ -18,9 +19,9 @@ export default function SignupView(props) {
           onChange={props.inputPasssword}
           placeholder="Password"
         ></input>
-        <button className="PrimaryButton" onClick={props.newUser}>
-          SIGN IN
-        </button>
+        <PrimaryButton onClick={props.newUser}>
+          LOG IN
+        </PrimaryButton>
       </div>
     </form>
   );

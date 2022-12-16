@@ -55,7 +55,7 @@ function App(props) {
         ></Route>
         <Route
           path="/favorites"
-          element={<NotSignedInView model={props.model} />}
+          element={<FavoritesPresenter model={props.model} />}
         ></Route>
         <Route
           path="/signin"

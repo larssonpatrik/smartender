@@ -18,6 +18,8 @@ export default function FooterView(props) {
         Developed by Felicia Atterling, Greta Jonsson, Patrik Larsson and Samuel
         Ribaric
       </METAText>
+      <METAText>
+      API: TheCocktailDB.com </METAText>
     </div>
   );
 }
