@@ -8,10 +8,21 @@ import { PrimaryButton } from "../components/Buttons";
 import Spacer from "../components/Spacer";
 import { HeadingFour } from "../components/Headings";
 import { METAText } from "../components/TextBodies";
+import { addFavoriteToFirebase } from "../firebaseModel";
 
-export default function DrinkDetailsPresenter(props) {
+export default function RandomizePresenter(props) {
   const [promiseState] = React.useState({});
   const [, reRender] = React.useState();
+  const [favorites, setFavorites] = React.useState(props.model.favoriteDrinks);
+
+  function addToFavoritesACB(id) {
+    props.model.addToFavorites(id);
+    addFavoriteToFirebase();
+  }
+
+  function removeFromFavoritesACB(id) {
+    props.model.removeFromFavorites(id);
+  }
 
   function notifyACB() {
     reRender({});
@@ -44,7 +55,12 @@ export default function DrinkDetailsPresenter(props) {
       <Spacer size={3} />
       <PrimaryButton action={randomizeDrinkACB}>Randomize again!</PrimaryButton>
       {promiseNoData(promiseState) || (
-        <DrinkDetailsView drinks={promiseState.data.drinks} />
+        <DrinkDetailsView
+          drinks={promiseState.data.drinks}
+          addFavoriteFunc={addToFavoritesACB}
+          removeFavoriteFunc={removeFromFavoritesACB}
+          favorites={favorites}
+        />
       )}
     </div>
   );

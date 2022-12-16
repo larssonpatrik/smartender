@@ -1,6 +1,7 @@
 .container {
   display: inline-block;
   text-align: center;
+  width: 210px;
 }
 
 .img {

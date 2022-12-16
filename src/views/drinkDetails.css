@@ -29,4 +29,9 @@ body {
   margin: 20px;
   font-size: 40px;
   color: whitesmoke;
+  cursor: pointer;
+}
+
+.heart:hover {
+  color: rgb(162, 123, 177);
 }

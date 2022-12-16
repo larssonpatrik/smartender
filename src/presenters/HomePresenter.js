@@ -10,12 +10,12 @@ import promiseNoData from "../promiseNoData";
 
 import { SearchForm } from "../components/SerchForm";
 import Spacer from "../components/Spacer";
-import Header from "../views/headerView";
 import DrinkSlideShowView from "../views/DrinkSlideshowView.js";
 import CategoryCard from "../components/CategoryCard";
 import BarPhoto from "../images/BarPhoto.png";
 import { HeadingOne, HeadingFour } from "../components/Headings";
 import { METAText } from "../components/TextBodies";
+import HeaderPresenter from "./HeaderPresenter.js";
 
 export default function HomePresenter(props) {
   const [testSearchPromiseState] = React.useState({});
@@ -89,7 +89,7 @@ export default function HomePresenter(props) {
           display: "flex",
           flexDirection: "row",
           justifyContent: "center",
-          alignItems: "center"
+          alignItems: "center",
         }}
       >
         <CategoryCard

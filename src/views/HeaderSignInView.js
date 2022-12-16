@@ -1,14 +1,7 @@
 //npm install react-icons --save
 import { Link } from "react-router-dom";
-import {
-  BiSearch,
-  BiHeart,
-  BiDrink,
-  BiBook,
-  BiShapePolygon,
-  BiQuestionMark,
-  BiHome,
-} from "react-icons/bi";
+import React, { useState } from "react";
+import { BiSearch, BiHeart, BiDrink, BiHome } from "react-icons/bi";
 
 import "../views/Header.css";
 import "../components/css/Headings.css";
@@ -16,7 +9,7 @@ import Spacer from "../components/Spacer";
 import { PrimaryButton, SecondaryButton } from "../components/Buttons";
 import { HeadingThree } from "../components/Headings";
 
-export default function Header(props) {
+export default function HeaderSingInView(props) {
   return (
     <div style={{ display: "flex", justifyContent: "center" }}>
       <div className="Header">
@@ -54,9 +47,13 @@ export default function Header(props) {
           </div>
         </div>
         <div className="btns">
-          <SecondaryButton>Log in</SecondaryButton>
+          <Link className="link" to="/signin">
+            <SecondaryButton>Log in</SecondaryButton>
+          </Link>
           <Spacer size={2} />
-          <PrimaryButton>Sign up</PrimaryButton>
+          <Link className="link" to="/signup">
+            <PrimaryButton>Sign up</PrimaryButton>
+          </Link>
         </div>
       </div>
     </div>

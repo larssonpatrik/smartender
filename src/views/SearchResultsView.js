@@ -2,21 +2,12 @@ import React from "react";
 import "./SearchResultsView.css";
 import DrinkCard from "../components/DrinkCard.js";
 import Spacer from "../components/Spacer";
-import { HeadingThree } from "../components/Headings";
+import { HeadingThree, HeadingTwo } from "../components/Headings";
 
 export default function SearchResultsView(props) {
   function render_drinkCB(drink, i) {
-    /*return (
-      //Change img to img tag with drink prop "img"
-      <React.Fragment key={i}>
-        
-        <DrinkCard name={drink.strDrink} img={drink.strDrinkThumb} />
-        <Spacer size={1}/>
-      </React.Fragment>
-      
-    );*/
     return (
-      <div className="drinkCardContainer">
+      <div className="drinkCardContainer" key={i}>
         <DrinkCard
           name={drink.strDrink}
           img={drink.strDrinkThumb}
@@ -24,13 +15,31 @@ export default function SearchResultsView(props) {
           navigation={"drinkDetails"}
         />
         <Spacer size={2} />
-        {console.log(drink)}
       </div>
     );
   }
 
   return props.drinks ? (
-    <div className="resultContainer">{props.drinks.map(render_drinkCB)}</div>
+    <>
+      {props.drinks.length === 0 || (
+        <>
+          <HeadingTwo>{props.title}</HeadingTwo>
+          <Spacer size={2} />{" "}
+        </>
+      )}
+
+      <div
+        className="resultContainer"
+        style={
+          props.drinks.length <= 4
+            ? { justifyContent: "flex-start" }
+            : { justifyContent: "space-between" }
+        }
+      >
+        {props.drinks.map(render_drinkCB)}
+      </div>
+      <Spacer size={4} />
+    </>
   ) : (
     <div style={{ height: "100vh" }}>
       <Spacer size={5}></Spacer>
