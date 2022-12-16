@@ -1,5 +1,6 @@
 //npm install react-icons --save
 import { Link } from "react-router-dom";
+import React, { useState } from "react";
 import {
   BiSearch,
   BiHeart,
@@ -17,6 +18,12 @@ import { PrimaryButton, SecondaryButton } from "../components/Buttons";
 import { HeadingThree } from "../components/Headings";
 
 export default function Header(props) {
+  const [isLoggedIn, setisLoggedIn] = useState(false);
+
+  function handleClickACB() {
+    setisLoggedIn(!isLoggedIn);
+  }
+
   return (
     <div style={{ display: "flex", justifyContent: "center" }}>
       <div className="Header">
@@ -54,9 +61,13 @@ export default function Header(props) {
           </div>
         </div>
         <div className="btns">
-          <SecondaryButton>Log in</SecondaryButton>
+          <Link className="link" to="/signin">
+            <SecondaryButton>Log in</SecondaryButton>
+          </Link>
           <Spacer size={2} />
-          <PrimaryButton>Sign up</PrimaryButton>
+          <Link className="link" to="/signup">
+            <PrimaryButton>Sign up</PrimaryButton>
+          </Link>
         </div>
       </div>
     </div>

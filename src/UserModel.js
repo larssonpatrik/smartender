@@ -1,7 +1,8 @@
 export default class UserModel {
-  constructor(favoriteDrinks = []) {
+  constructor(favoriteDrinks = [], loggedIn = false) {
     this.observers = [];
     this.favoriteDrinks = favoriteDrinks;
+    this.loggedIn = false;
   }
 
   addObserver(callback) {
