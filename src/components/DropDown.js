@@ -1,41 +1,18 @@
 import React from "react";
-import { BiCheckbox, BiCheckboxChecked } from "react-icons/bi";
-import { METAText } from "./TextBodies";
 import "../components/css/DropDown.css";
 import Spacer from "./Spacer";
 import Checkbox from "./Checkbox";
 import { SecondaryButton } from "./Buttons";
 
 export default function DropDown(props) {
-  const [isCheckedArrayAlcohol, setIsCheckedArrayAlcohol] = React.useState(
-    new Array(props.data.length).fill(false)
-  );
-
-  const [isCheckedArrayMixer, setisCheckedArrayMixer] = React.useState(
-    new Array(props.data.length).fill(false)
-  );
-
-  const [isCheckedArrayFlavour, setIsCheckedArrayFlavour] = React.useState(
-    new Array(props.data.length).fill(false)
-  );
+  const [isCheckedArray, setIsCheckedArray] = props.checkedArrayState;
 
   function handleCheck(position) {
-    if (props.type === "alcohol") {
-      const updatedIsCheckedArray = isCheckedArrayAlcohol.map((item, index) => {
-        return index === position ? !item : item;
-      });
-      setIsCheckedArrayAlcohol(updatedIsCheckedArray);
-    } else if (props.type === "mixer") {
-      const updatedIsCheckedArray = isCheckedArrayMixer.map((item, index) => {
-        return index === position ? !item : item;
-      });
-      setisCheckedArrayMixer(updatedIsCheckedArray);
-    } else if (props.type === "flavour") {
-      const updatedIsCheckedArray = isCheckedArrayFlavour.map((item, index) => {
-        return index === position ? !item : item;
-      });
-      setIsCheckedArrayFlavour(updatedIsCheckedArray);
-    }
+    const updatedIsCheckedArray = isCheckedArray.map((item, index) => {
+      return index === position ? !item : item;
+    });
+
+    setIsCheckedArray(updatedIsCheckedArray);
   }
 
   function renderOptionsCB(ingr, i) {
@@ -44,7 +21,7 @@ export default function DropDown(props) {
         {props.type === "alcohol" ? (
           <Checkbox
             label={ingr}
-            checked={isCheckedArrayAlcohol[i]}
+            checked={isCheckedArray[i]}
             onChange={handleCheck}
             updateParamsFunc={props.updateParamsFunc}
             index={i}
@@ -52,7 +29,7 @@ export default function DropDown(props) {
         ) : props.type === "mixer" ? (
           <Checkbox
             label={ingr}
-            checked={isCheckedArrayMixer[i]}
+            checked={isCheckedArray[i]}
             onChange={handleCheck}
             updateParamsFunc={props.updateParamsFunc}
             index={i}
@@ -60,7 +37,7 @@ export default function DropDown(props) {
         ) : props.type === "flavour" ? (
           <Checkbox
             label={ingr}
-            checked={isCheckedArrayFlavour[i]}
+            checked={isCheckedArray[i]}
             onChange={handleCheck}
             updateParamsFunc={props.updateParamsFunc}
             index={i}
