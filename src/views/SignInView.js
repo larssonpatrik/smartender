@@ -17,7 +17,7 @@ export default function SignupView(props) {
           placeholder="Password"
         ></input>
         <button className="PrimaryButton" onClick={props.newUser}>
-          SIGN UP
+          SIGN IN
         </button>
       </div>
     </form>
