@@ -1,121 +1,38 @@
 import React from "react";
-import { TirtiaryButton } from "../components/Buttons";
+import { SecondaryButton, TirtiaryButton } from "../components/Buttons";
 import DropDown from "../components/DropDown";
 import Spacer from "../components/Spacer";
-import { listCategories, listGlasses, listIngredients } from "../DrinkSource";
-import promiseNoData from "../promiseNoData";
-import resolvePromise from "../resolvePromise";
 
 export default function DropDownView(props) {
-  const [alcoholActive, setalcoholActive] = React.useState(false);
-  const [mixerActive, setmixerActive] = React.useState(false);
-  const [flavourActive, setFlavourActive] = React.useState(false);
-
-  const ALCOHOL = [
-    "Vodka",
-    "Absolut Kurant",
-    "Absolut Vodka",
-    "Raspberry Vodka",
-    "Vanilla Vodka",
-    "Absolut Citron",
-    "Rum",
-    "Añejo Rum",
-    "Dark Rum",
-    "Light Rum",
-    "Malibu Rum",
-    "White Rum",
-    "151 proof rum",
-    "Gin",
-    "Sloe Gin",
-    "Blended Whiskey",
-    "Irish Whiskey",
-    "Rye Whiskey",
-    "Tennessee whiskey",
-    "Scotch",
-    "Tequila",
-    "Vermouth",
-    "Dry Vermouth",
-    "Sweet Vermouth",
-  ];
-
-  const TASTERS = [
-    "Lemon Peel",
-    "Lemon Juice",
-    "Lemonade",
-    "lemon",
-    "Lime Juice",
-    "Lime",
-    "Chocolate",
-    "Chocolate Syrup",
-    "Mint",
-    "Coffee",
-    "Strawberries",
-    "Mango",
-    "Banana",
-  ];
-
-  const MIXERS = [
-    "Club Soda",
-    "Coca-cola",
-    "Grape soda",
-    "Lemon-lime soda",
-    "Soda Water",
-    "Sprite",
-    "Tonic Water",
-    "Apple Juice",
-    "Cranberry Juice",
-    "Grapefruit Juice",
-    "Orange Juice",
-    "Passion fruit juice",
-    "Pineapple Juice",
-    "Tomato Juice",
-    "Grenadine",
-  ];
-
-  function setalcoholActiveACB() {
-    setalcoholActive(!alcoholActive);
-    setmixerActive(false);
-    setFlavourActive(false);
-  }
-
-  function setmixerActiveACB() {
-    setalcoholActive(false);
-    setmixerActive(!mixerActive);
-    setFlavourActive(false);
-  }
-
-  function setFlavourActiveACB() {
-    setalcoholActive(false);
-    setmixerActive(false);
-    setFlavourActive(!flavourActive);
-  }
-
   function renderCurrentActive() {
-    if (alcoholActive) {
+    if (props.activeState.alcohol[0]) {
       return (
         <DropDown
-          data={ALCOHOL}
+          data={props.data[0]}
           type={"alcohol"}
           updateParamsFunc={props.updateParamsFunc}
           newSearchFunc={props.newSearchFunc}
+          checkedArrayState={props.checkedArrayState.alcohol}
         />
       );
-    } else if (mixerActive) {
+    } else if (props.activeState.mixer[0]) {
       return (
         <DropDown
-          data={MIXERS}
+          data={props.data[1]}
           type={"mixer"}
           updateParamsFunc={props.updateParamsFunc}
           newSearchFunc={props.newSearchFunc}
+          checkedArrayState={props.checkedArrayState.mixer}
         />
       );
-    } else if (flavourActive) {
+    } else if (props.activeState.flavour[0]) {
       return (
         <DropDown
-          data={TASTERS}
+          data={props.data[2]}
           type={"flavour"}
           updateParamsFunc={props.updateParamsFunc}
           newSearchFunc={props.newSearchFunc}
+          checkedArrayState={props.checkedArrayState.flavour}
         />
       );
     }
@@ -130,29 +47,23 @@ export default function DropDownView(props) {
           justifyContent: "center",
         }}
       >
-        <TirtiaryButton action={setalcoholActiveACB}>
+        <TirtiaryButton action={props.activeState.alcohol[1]}>
           Choose Alcohol
         </TirtiaryButton>
         <Spacer size={3} />
-        <TirtiaryButton action={setmixerActiveACB}>Choose Mixer</TirtiaryButton>
+        <TirtiaryButton action={props.activeState.mixer[1]}>
+          Choose Mixer
+        </TirtiaryButton>
         <Spacer size={3} />
-        <TirtiaryButton action={setFlavourActiveACB}>
+        <TirtiaryButton action={props.activeState.flavour[1]}>
           Choose Flavour
         </TirtiaryButton>
+        <Spacer size={3} />
+        <SecondaryButton action={props.clearChoices}>
+          Clear Choices
+        </SecondaryButton>
       </div>
       {renderCurrentActive()}
     </div>
   );
 }
-
-/* if (props.active === "") {
-        
-}
-else if (props.active === "ingredients") {
-return "Nu visas ingredients";
-} else if (props.active === "type") {
-return "Nu visas type";
-} else if (props.active === "glass") {
-return "nu visas glass";
-}
-*/

@@ -5,7 +5,6 @@ import Spacer from "../components/Spacer";
 import { HeadingThree, HeadingTwo } from "../components/Headings";
 
 export default function SearchResultsView(props) {
-  console.log(props);
   function render_drinkCB(drink, i) {
     return (
       <div className="drinkCardContainer" key={i}>
