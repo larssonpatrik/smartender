@@ -2,8 +2,8 @@ import React from "react";
 import "./SignForm.css";
 import "../components/css/Headings.css";
 import { PrimaryButton } from "../components/Buttons";
-import Button from '@mui/material/Button'
-import Textfield from '@mui/material/TextField'
+import Button from "@mui/material/Button";
+import Textfield from "@mui/material/TextField";
 import Spacer from "../components/Spacer";
 import { HeadingFour } from "../components/Headings";
 import { METAText } from "../components/TextBodies";
@@ -11,36 +11,35 @@ import { METAText } from "../components/TextBodies";
 export default function SignInView(props) {
   return (
     <form>
-      <div className="signForm"> 
-
-      <HeadingFour>Log In </HeadingFour>
-      <Spacer size={0} />
-      <METAText>Log in to your account</METAText>
-      <Spacer size={3} />
+      <div className="signForm">
+        <HeadingFour>Log In </HeadingFour>
+        <Spacer size={0} />
+        <METAText>Log in to your account</METAText>
+        <Spacer size={3} />
 
         <Textfield
-          label='Email'
+          label="Email"
           variant="filled"
           color="primary"
           size="small"
           margin="dense"
           style={{
-            backgroundColor: 'whitesmoke',
-            borderRadius: '8px',
+            backgroundColor: "whitesmoke",
+            borderRadius: "8px",
           }}
           value={props.userEmail}
           onChange={props.inputEmail}
         ></Textfield>
 
         <Textfield
-          label='Password'
+          label="Password"
           variant="filled"
           color="primary"
           size="small"
           margin="dense"
           style={{
-            backgroundColor: 'whitesmoke',
-            borderRadius: '8px',
+            backgroundColor: "whitesmoke",
+            borderRadius: "8px",
           }}
           value={props.userPassword}
           onChange={props.inputPassword}
@@ -48,16 +47,19 @@ export default function SignInView(props) {
 
         <Spacer size={3} />
 
-        <Button 
-        variant='contained' 
-        size='medium' 
-        style={{backgroundColor: 'rgb(162, 123, 177)',
-        //color: 'rgb(22, 14, 38)', 
-        borderRadius: '8px', 
-        fontSize: '16px'}} 
-        color='primary'
-        disabled={!props.userPassword}
-        onClick={props.newUser}>
+        <Button
+          variant="contained"
+          size="medium"
+          style={{
+            backgroundColor: "rgb(162, 123, 177)",
+            //color: 'rgb(22, 14, 38)',
+            borderRadius: "8px",
+            fontSize: "16px",
+          }}
+          color="primary"
+          disabled={!props.userPassword}
+          onClick={props.newUser}
+        >
           LOG IN
         </Button>
 

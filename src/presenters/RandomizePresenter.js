@@ -8,7 +8,11 @@ import { PrimaryButton } from "../components/Buttons";
 import Spacer from "../components/Spacer";
 import { HeadingFour } from "../components/Headings";
 import { METAText } from "../components/TextBodies";
-import { addFavoriteToFirebase } from "../firebaseModel";
+import {
+  addFavoriteToFirebase,
+  removeFavoriteFromFirebase,
+} from "../firebaseModel";
+import { getAuth } from "firebase/auth";
 
 export default function RandomizePresenter(props) {
   const [promiseState] = React.useState({});
@@ -17,11 +21,12 @@ export default function RandomizePresenter(props) {
 
   function addToFavoritesACB(id) {
     props.model.addToFavorites(id);
-    addFavoriteToFirebase();
+    addFavoriteToFirebase(props.model);
   }
 
   function removeFromFavoritesACB(id) {
     props.model.removeFromFavorites(id);
+    removeFavoriteFromFirebase(props.model);
   }
 
   function notifyACB() {

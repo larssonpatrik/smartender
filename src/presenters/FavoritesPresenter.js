@@ -8,10 +8,13 @@ import { useParams } from "react-router-dom";
 import { HeadingFour } from "../components/Headings";
 import Spacer from "../components/Spacer";
 import { METAText } from "../components/TextBodies";
-import {getAuth} from "firebase/auth"
+import { getAuth } from "firebase/auth";
+import { getFavoriteDrinksFromFirebase } from "../firebaseModel";
 
 export default function FavoritesPresenter(props) {
   const [promiseState] = React.useState({});
+  const [firebasePromiseState] = React.useState({});
+
   const [, reRender] = React.useState();
 
   function notifyACB() {
@@ -19,15 +22,13 @@ export default function FavoritesPresenter(props) {
   }
 
   function getFavoriteDrinks() {
+    getFavoriteDrinksFromFirebase(props.model);
     return Promise.all(
       props.model.favoriteDrinks.map((id) => {
         return getDrinkById(id).then((obj) => obj.drinks[0]);
       })
     );
   }
-
-  const user = getAuth().currentUser
-  console.log(user)
 
   React.useEffect(() => {
     resolvePromise(getFavoriteDrinks(), promiseState, notifyACB);
@@ -51,7 +52,6 @@ export default function FavoritesPresenter(props) {
         Your absolute favorite drinks!
       </METAText>
       <Spacer size={3} />
-      {console.log(user)}
       {promiseNoData(promiseState) || (
         <SearchResultsView drinks={promiseState.data} />
       )}
