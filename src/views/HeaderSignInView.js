@@ -1,15 +1,7 @@
 //npm install react-icons --save
 import { Link } from "react-router-dom";
 import React, { useState } from "react";
-import {
-  BiSearch,
-  BiHeart,
-  BiDrink,
-  BiBook,
-  BiShapePolygon,
-  BiQuestionMark,
-  BiHome,
-} from "react-icons/bi";
+import { BiSearch, BiHeart, BiDrink, BiHome } from "react-icons/bi";
 
 import "../views/Header.css";
 import "../components/css/Headings.css";
@@ -17,13 +9,7 @@ import Spacer from "../components/Spacer";
 import { PrimaryButton, SecondaryButton } from "../components/Buttons";
 import { HeadingThree } from "../components/Headings";
 
-export default function Header(props) {
-  const [isLoggedIn, setisLoggedIn] = useState(false);
-
-  function handleClickACB() {
-    setisLoggedIn(!isLoggedIn);
-  }
-
+export default function HeaderSingInView(props) {
   return (
     <div style={{ display: "flex", justifyContent: "center" }}>
       <div className="Header">

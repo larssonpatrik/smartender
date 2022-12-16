@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import "./App.css";
 
 import HomePresenter from "./presenters/HomePresenter";
-import Header from "./views/headerView";
+import HeaderPresenter from "./presenters/HeaderPresenter.js";
 import Spacer from "./components/Spacer";
 import DrinkDetailsPresenter from "./presenters/DrinkDetailsPresenter.js";
 import RandomizePresenter from "./presenters/RandomizePresenter.js";
@@ -18,21 +18,10 @@ import FooterView from "./views/FooterView.js";
 import NotSignedInView from "./views/NotSignedInView.js";
 
 function App(props) {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-  function handleLogin() {
-    setIsLoggedIn(true);
-  }
-
-  function handleLogout() {
-    setIsLoggedIn(false);
-  }
-
   return (
     <>
       <Spacer size={3} />
-      <Header isLoggedIn={isLoggedIn} onLogout={handleLogout} />
-
+      <HeaderPresenter />
       <Spacer size={3} />
       <Routes>
         <Route path="/" element={<HomePresenter />}></Route>

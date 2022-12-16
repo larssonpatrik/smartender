@@ -19,13 +19,12 @@ export default function SignInPresenter(props) {
     setPassword(event.target.value);
   }
 
-  function signInUserInFirebaseACB(e) {
-    e.preventDefault();
+  function signInUserInFirebaseACB(event) {
+    event.preventDefault();
     const auth = getAuth();
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
-        props.history.push("");
       })
       .catch((error) => {
         const errorCode = error.code;
