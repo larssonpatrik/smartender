@@ -7,6 +7,7 @@ import Textfield from "@mui/material/TextField";
 import Spacer from "../components/Spacer";
 import { HeadingFour } from "../components/Headings";
 import { METAText } from "../components/TextBodies";
+import { Link } from "react-router-dom";
 
 export default function SignInView(props) {
   return (
@@ -60,7 +61,7 @@ export default function SignInView(props) {
           disabled={!props.userPassword}
           onClick={props.newUser}
         >
-          LOG IN
+          <Link to="/">LOG IN</Link>
         </Button>
 
         <Spacer size={6} />
