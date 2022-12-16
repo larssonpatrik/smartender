@@ -89,8 +89,6 @@ export default function AdvancedSearchPresenter() {
   );
   const [, reRender] = React.useState();
 
-  console.log(searchParamArray);
-
   function setAlcoholActiveACB() {
     setAlcoholActive(!alcoholActive);
     setMixerActive(false);
@@ -114,6 +112,7 @@ export default function AdvancedSearchPresenter() {
     setIsCheckedArrayMixer(new Array(MIXERS.length).fill(false));
     setIsCheckedArrayFlavour(new Array(FLAVOURS.length).fill(false));
     setSearchParamArray([]);
+    resolvePromise(searchDrinkByName(""), resultsPromiseState, notifyACB);
   }
 
   function notifyACB() {
