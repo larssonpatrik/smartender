@@ -54,9 +54,13 @@ export default function Header(props) {
           </div>
         </div>
         <div className="btns">
-          <SecondaryButton>Log in</SecondaryButton>
+          <Link className="link" to="/signin">
+            <SecondaryButton>Log in</SecondaryButton>
+          </Link>
           <Spacer size={2} />
-          <PrimaryButton>Sign up</PrimaryButton>
+          <Link className="link" to="/signup">
+            <PrimaryButton>Sign up</PrimaryButton>
+          </Link>
         </div>
       </div>
     </div>
