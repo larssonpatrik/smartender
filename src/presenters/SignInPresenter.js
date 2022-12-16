@@ -37,7 +37,7 @@ export default function SignInPresenter(props) {
     <div>
       <SignInView
         inputEmail={onInputEmailChangeACB}
-        inputPasssword={onInputPasswordChange}
+        inputPassword={onInputPasswordChange}
         newUser={signInUserInFirebaseACB}
         userPassword={password}
         userEmail={email}

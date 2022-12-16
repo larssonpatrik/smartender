@@ -27,6 +27,7 @@ export default function FavoritesPresenter(props) {
   }
 
   const user = getAuth().currentUser
+  console.log(user)
 
   React.useEffect(() => {
     resolvePromise(getFavoriteDrinks(), promiseState, notifyACB);
