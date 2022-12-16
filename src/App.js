@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 
@@ -12,15 +12,27 @@ import SearchResultsPresenter from "./presenters/SearchResultsPresenter";
 import CategoryResultsPresenter from "./presenters/CategoryResultPresenter";
 import { HeadingFour } from "./components/Headings";
 import SignInPresenter from "./presenters/SignInPresenter";
-import SignupPresenter from "./presenters/SignupPresenter";
+import SignUpPresenter from "./presenters/SignUpPresenter";
 import FavoritesPresenter from "./presenters/FavoritesPresenter.js";
 import FooterView from "./views/FooterView.js";
+import NotSignedInView from "./views/NotSignedInView.js";
 
 function App(props) {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  function handleLogin() {
+    setIsLoggedIn(true);
+  }
+
+  function handleLogout() {
+    setIsLoggedIn(false);
+  }
+
   return (
     <>
       <Spacer size={3} />
-      <Header />
+      <Header isLoggedIn={isLoggedIn} onLogout={handleLogout} />
+
       <Spacer size={3} />
       <Routes>
         <Route path="/" element={<HomePresenter />}></Route>
@@ -43,7 +55,7 @@ function App(props) {
         ></Route>
         <Route
           path="/favorites"
-          element={<FavoritesPresenter model={props.model} />}
+          element={<NotSignedInView model={props.model} />}
         ></Route>
         <Route
           path="/signin"
@@ -51,11 +63,11 @@ function App(props) {
         ></Route>
         <Route
           path="/signup"
-          element={<SignupPresenter model={props.model} />}
+          element={<SignUpPresenter model={props.model} />}
         ></Route>
         <Route
           path="*"
-          element={<HeadingFour>DU ÄR FKN BARSTOPPAD</HeadingFour>}
+          element={<HeadingFour>DU ÄR BARSTOPPAD</HeadingFour>}
         ></Route>
       </Routes>
       <FooterView />

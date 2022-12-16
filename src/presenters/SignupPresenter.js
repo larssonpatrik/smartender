@@ -4,10 +4,10 @@ import { initializeApp } from "firebase/app";
 import firebaseConfig from "../firebaseConfig";
 import "../components/css/Signup.css";
 import "../components/css/Button.css";
-import SignupView from "../views/SignupView";
+import SignupView from "../views/SignUpView";
 const app = initializeApp(firebaseConfig);
 
-export default function SignupPresenter(props) {
+export default function SignUpPresenter(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -19,8 +19,8 @@ export default function SignupPresenter(props) {
     setPassword(event.target.value);
   }
 
-  function createUserInFirebaseACB(e) {
-    e.preventDefault();
+  function createUserInFirebaseACB(event) {
+    event.preventDefault();
     const auth = getAuth();
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {

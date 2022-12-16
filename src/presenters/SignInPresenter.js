@@ -7,7 +7,7 @@ import "../components/css/Button.css";
 import SignInView from "../views/SignInView";
 const app = initializeApp(firebaseConfig);
 
-export default function SignupPresenter(props) {
+export default function SignInPresenter(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -25,7 +25,7 @@ export default function SignupPresenter(props) {
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
-        alert("You are now signed in!");
+        props.history.push("");
       })
       .catch((error) => {
         const errorCode = error.code;

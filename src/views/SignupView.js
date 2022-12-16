@@ -1,9 +1,10 @@
 import React from "react";
+import "../components/css/Headings.css";
 
-export default function SignupView(props) {
+export default function SignUpView(props) {
   return (
     <form>
-      <div className="Signupform">
+      <div className="signForm">
         <input
           className="SignupInput"
           value={props.userEmail}

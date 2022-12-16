@@ -29,3 +29,13 @@
   align-items: center;
   cursor: pointer;
 }
+
+.PrimaryButton:hover {
+  border: 2px solid rgb(244, 244, 244);
+  cursor: pointer;
+}
+
+.SecondaryButton:hover {
+  border: 2px solid rgb(244, 244, 244);
+  cursor: pointer;
+}
