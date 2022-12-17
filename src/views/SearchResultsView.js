@@ -1,5 +1,5 @@
 import React from "react";
-import "./SearchResultsView.css";
+import "./css/SearchResultsView.css";
 import DrinkCard from "../components/DrinkCard.js";
 import Spacer from "../components/Spacer";
 import { HeadingThree, HeadingTwo } from "../components/Headings";

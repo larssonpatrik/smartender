@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import React from "react";
 import { BiSearch, BiHeart, BiDrink, BiHome } from "react-icons/bi";
 
-import "../views/Header.css";
+import "./css/Header.css";
 import "../components/css/Headings.css";
 import Spacer from "../components/Spacer";
 import { PrimaryButton, SecondaryButton } from "../components/Buttons";

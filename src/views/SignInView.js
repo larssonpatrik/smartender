@@ -1,5 +1,5 @@
 import React from "react";
-import "./SignForm.css";
+import "./css/SignForm.css";
 import "../components/css/Headings.css";
 import Button from '@mui/material/Button'
 import Textfield from '@mui/material/TextField'
@@ -49,10 +49,7 @@ export default function SignInView(props) {
         ></Textfield>
 
         <Spacer size={3} />
-
-        
         <Button 
-        
         variant='contained' 
         size='medium' 
         style={{backgroundColor: 'rgb(162, 123, 177)',
@@ -66,8 +63,6 @@ export default function SignInView(props) {
           LOG IN
         </Link>
         </Button>
-        
-
         <Spacer size={6} />
         <Spacer size={6} />
         <Spacer size={2} />

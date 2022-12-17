@@ -41,7 +41,7 @@ export default function FavoritesPresenter(props) {
 
   function wasCreatedACB() {
     props.model.addObserver(observersACB);
-
+  
     resolvePromise(getFavoriteDrinks(), promiseState, notifyACB);
 
     function isTakenDownACB() {
@@ -49,7 +49,7 @@ export default function FavoritesPresenter(props) {
     }
     return isTakenDownACB;
   }
-
+  
   React.useEffect(wasCreatedACB, [favoriteArray]);
 
   return (

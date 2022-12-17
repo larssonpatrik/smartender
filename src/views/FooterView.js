@@ -2,7 +2,7 @@ import React from "react";
 import Spacer from "../components/Spacer";
 import { METAText } from "../components/TextBodies";
 import { HeadingThree } from "../components/Headings";
-import "./FooterView.css";
+import "./css/FooterView.css";
 
 export default function FooterView(props) {
   return (

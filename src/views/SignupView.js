@@ -1,4 +1,5 @@
 import React from "react";
+import "./css/SignForm.css";
 import "../components/css/Headings.css";
 import Button from "@mui/material/Button";
 import Textfield from "@mui/material/TextField";
@@ -54,7 +55,6 @@ export default function SignUpView(props) {
           size="medium"
           style={{
             backgroundColor: "rgb(162, 123, 177)",
-            //color: 'rgb(22, 14, 38)',
             borderRadius: "8px",
             fontSize: "16px",
           }}
@@ -68,7 +68,6 @@ export default function SignUpView(props) {
         </Button>
         <Spacer size={2} />
         <METAText>OBS: don't use your real email and password! </METAText>
-
         <Spacer size={6} />
         <Spacer size={6} />
         <Spacer size={2} />
