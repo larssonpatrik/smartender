@@ -1,10 +1,8 @@
-import FavoritesView from "../views/SearchResultsView";
 import SearchResultsView from "../views/SearchResultsView";
-import React, { useState } from "react";
+import React from "react";
 import resolvePromise from "../resolvePromise";
 import { getDrinkById } from "../DrinkSource";
 import promiseNoData from "../promiseNoData";
-import { useParams } from "react-router-dom";
 import { HeadingFour } from "../components/Headings";
 import Spacer from "../components/Spacer";
 import { METAText } from "../components/TextBodies";
@@ -16,31 +14,46 @@ import { Link } from "react-router-dom";
 
 export default function FavoritesPresenter(props) {
   const [promiseState] = React.useState({});
-  const [firebasePromiseState] = React.useState({});
-
+  const [favoriteArray, setFavoriteArray] = React.useState(
+    props.model.favoriteDrinks
+  );
   const [, reRender] = React.useState();
-
   const user = getAuth().currentUser;
 
   function notifyACB() {
     reRender({});
   }
 
-  function getFavoriteDrinks() {
-    getFavoriteDrinksFromFirebase(props.model);
+  function observersACB() {
+    setFavoriteArray(props.model.favoriteDrinks);
+  }
 
+  function getFavoriteDrinks() {
+    if (user) {
+      getFavoriteDrinksFromFirebase(props.model);
+    }
     return Promise.all(
-      props.model.favoriteDrinks.map((id) => {
+      favoriteArray.map((id) => {
         return getDrinkById(id).then((obj) => obj.drinks[0]);
       })
     );
   }
 
-  React.useEffect(() => {
-    if (user) {
-      resolvePromise(getFavoriteDrinks(), promiseState, notifyACB);
+  function wasCreatedACB() {
+    props.model.addObserver(observersACB);
+    console.log("COMPONENT INITIALIZED");
+
+    resolvePromise(getFavoriteDrinks(), promiseState, notifyACB);
+
+    function isTakenDownACB() {
+      props.model.removeObserver(observersACB);
+      console.log("COMPONENT TAKEN DOWN");
     }
-  }, []);
+
+    return isTakenDownACB;
+  }
+
+  React.useEffect(wasCreatedACB, [favoriteArray]);
 
   //Here props will be used instead of placeholder "drinks" const later
   return (

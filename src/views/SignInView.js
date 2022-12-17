@@ -1,13 +1,11 @@
 import React from "react";
 import "./SignForm.css";
 import "../components/css/Headings.css";
-import { PrimaryButton } from "../components/Buttons";
 import Button from "@mui/material/Button";
 import Textfield from "@mui/material/TextField";
 import Spacer from "../components/Spacer";
 import { HeadingFour } from "../components/Headings";
 import { METAText } from "../components/TextBodies";
-import { Link } from "react-router-dom";
 
 export default function SignInView(props) {
   return (
@@ -63,7 +61,7 @@ export default function SignInView(props) {
           disabled={!props.userPassword}
           onClick={props.newUser}
         >
-          <Link to="/">LOG IN</Link>
+          LOG IN
         </Button>
 
         <Spacer size={6} />

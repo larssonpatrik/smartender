@@ -5,6 +5,11 @@ import React, { useState, useEffect } from "react";
 export default function HeaderPresenter(props) {
   const [user, setUser] = useState(null);
 
+  function signOutACB() {
+    const auth = getAuth();
+    auth.signOut();
+  }
+
   useEffect(() => {
     const auth = getAuth();
     const unsubscribe = auth.onAuthStateChanged((authUser) => {
@@ -19,11 +24,6 @@ export default function HeaderPresenter(props) {
       unsubscribe();
     };
   }, []);
-
-  function signOutACB() {
-    const auth = getAuth();
-    auth.signOut();
-  }
 
   return (
     <div>
