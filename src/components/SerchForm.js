@@ -18,11 +18,16 @@ export function SearchForm(props) {
     navigate("searchResult/" + input);
   }
 
+  function handleKeyPressACB(event) {
+    if(event.keyCode === 13) {onUserClickOnButtonACB()}
+  }
+
   return (
     <div className="SearchForm" onChange={onInputChangeACB}>
       <input
         className="SearchFormInput"
         placeholder="Search for your favorite drinks"
+        onKeyUp={handleKeyPressACB}
       />
       <Spacer size={1} />
       <PrimaryButton action={onUserClickOnButtonACB}>Let's go!</PrimaryButton>

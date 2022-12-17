@@ -56,57 +56,57 @@ export default function DrinkDetailsView(props) {
             <Paragraph>
               {props.drinks[0].strIngredient3
                 ? props.drinks[0].strIngredient3 +
-                  ": " +
-                  props.drinks[0].strMeasure3
+                 
+                  (props.drinks[0].strMeasure3 ? ": " + props.drinks[0].strMeasure3 : '')
                 : ""}
             </Paragraph>
             <Paragraph>
               {props.drinks[0].strIngredient4
                 ? props.drinks[0].strIngredient4 +
-                  ": " +
-                  props.drinks[0].strMeasure4
+                  
+                  (props.drinks[0].strMeasure4 ? ": " + props.drinks[0].strMeasure4 : '')
                 : ""}
             </Paragraph>
             <Paragraph>
               {props.drinks[0].strIngredient5
                 ? props.drinks[0].strIngredient5 +
-                  ": " +
-                  props.drinks[0].strMeasure5
+                  
+                  (props.drinks[0].strMeasure5 ? ": " + props.drinks[0].strMeasure5 : '')
                 : ""}
             </Paragraph>
             <Paragraph>
               {props.drinks[0].strIngredient6
                 ? props.drinks[0].strIngredient6 +
-                  ": " +
-                  props.drinks[0].strMeasure6
+                  
+                  (props.drinks[0].strMeasure6 ? ": " + props.drinks[0].strMeasure6 : '')
                 : ""}
             </Paragraph>
             <Paragraph>
               {props.drinks[0].strIngredient7
                 ? props.drinks[0].strIngredient7 +
-                  ": " +
-                  props.drinks[0].strMeasure7
+                  
+                  (props.drinks[0].strMeasure7 ? ": " + props.drinks[0].strMeasure7 : '')
                 : ""}
             </Paragraph>
             <Paragraph>
               {props.drinks[0].strIngredient8
                 ? props.drinks[0].strIngredient8 +
-                  ": " +
-                  props.drinks[0].strMeasure8
+                  
+                  (props.drinks[0].strMeasure8 ? ": " + props.drinks[0].strMeasure8 : '')
                 : ""}
             </Paragraph>
             <Paragraph>
               {props.drinks[0].strIngredient9
                 ? props.drinks[0].strIngredient9 +
-                  ": " +
-                  props.drinks[0].strMeasure9
+                  
+                  (props.drinks[0].strMeasure9 ? ": " + props.drinks[0].strMeasure9 : '')
                 : ""}
             </Paragraph>
             <Paragraph>
               {props.drinks[0].strIngredient10
                 ? props.drinks[0].strIngredient10 +
-                  ": " +
-                  props.drinks[0].strMeasure10
+                  
+                  (props.drinks[0].strMeasure10 ? ": " + props.drinks[0].strMeasure10 : '')
                 : ""}
             </Paragraph>
             <Spacer size={2} />
