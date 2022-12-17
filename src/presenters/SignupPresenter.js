@@ -1,13 +1,11 @@
 import React, { useState } from "react";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-import { initializeApp } from "firebase/app";
-import firebaseConfig from "../firebaseConfig";
 import "../components/css/Signup.css";
 import "../components/css/Button.css";
 import SignUpView from "../views/SignUpView";
-const app = initializeApp(firebaseConfig);
+import { createUserInFirebase } from "../firebaseModel";
 
-export default function SignUpPresenter(props) {
+export default function SignUpPresenter() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -20,17 +18,7 @@ export default function SignUpPresenter(props) {
   }
 
   function createUserInFirebaseACB(event) {
-    event.preventDefault();
-    const auth = getAuth();
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        const user = userCredential.user;
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        alert(errorMessage);
-      });
+    createUserInFirebase(event, email, password)
   }
 
   return (

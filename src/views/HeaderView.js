@@ -52,7 +52,7 @@ export default function HeaderView(props) {
                 <Spacer size={2} />
                 <Link className="link" to="/">
                   <PrimaryButton action={props.signOutFunc}>
-                    log out
+                    Log out
                   </PrimaryButton>
                 </Link>
               </>

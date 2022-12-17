@@ -23,8 +23,9 @@
   border-radius: 8px;
   border: none;
   font-size: 20px;
-  background-color: rgb(162, 123, 177);
-  color: rgb(22, 14, 38);
+  background-color: transparent;
+  border: 2px solid transparent;
+  color: whitesmoke;
   display: flex;
   align-items: center;
   cursor: pointer;

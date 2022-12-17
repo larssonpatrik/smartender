@@ -13,7 +13,6 @@ export default function DrinkDetailsPresenter(props) {
   const [promiseState] = React.useState({});
   const [, reRender] = React.useState();
   const [favorites, setFavorites] = React.useState(props.model.favoriteDrinks);
-  const [activeFavorite, setActiveFavorite] = React.useState();
 
   function addToFavoritesACB(id) {
     props.model.addToFavorites(id);
@@ -33,11 +32,9 @@ export default function DrinkDetailsPresenter(props) {
     resolvePromise(getDrinkById(id), promiseState, notifyACB);
 
     props.model.addObserver(observersACB);
-    console.log("COMPONENT INITIALIZED");
 
     function isTakenDownACB() {
       props.model.removeObserver(observersACB);
-      console.log("COMPONENT TAKEN DOWN");
     }
 
     return isTakenDownACB;

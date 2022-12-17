@@ -2,16 +2,21 @@ import { HeadingFour } from "../components/Headings";
 import Spacer from "../components/Spacer";
 import { METAText } from "../components/TextBodies";
 
-export default function NotFoundPresenter(props) {
+export default function NotFoundPresenter() {
   return (
     <div>
+      <Spacer size={4} />
       <HeadingFour style={{ textAlign: "center" }}>
-        OH NO! Page not found
+        OH NO! No Results!
       </HeadingFour>
       <Spacer size={0} />
       <METAText style={{ textAlign: "center" }}>
-        Try redirecting by using the menu on top
+        You're supposed to search for a drink!
       </METAText>
+      <Spacer size={6} />
+      <Spacer size={6} />
+      <Spacer size={6} />
+      <Spacer size={6} />
       <Spacer size={4} />
     </div>
   );

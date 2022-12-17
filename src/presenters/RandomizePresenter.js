@@ -12,12 +12,14 @@ import {
   addFavoriteToFirebase,
   removeFavoriteFromFirebase,
 } from "../firebaseModel";
+import { getAuth } from "firebase/auth";
 
 export default function RandomizePresenter(props) {
   const [promiseState] = React.useState({});
-  const [, reRender] = React.useState();
+  const [, reRender] = React.useState({});
+  
   const [favorites, setFavorites] = React.useState(props.model.favoriteDrinks);
-
+    
   function addToFavoritesACB(id) {
     props.model.addToFavorites(id);
     addFavoriteToFirebase(props.model);

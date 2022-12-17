@@ -4,6 +4,7 @@ import DropDown from "../components/DropDown";
 import Spacer from "../components/Spacer";
 
 export default function DropDownView(props) {
+  console.log(props)
   function renderCurrentActive() {
     if (props.activeState.alcohol[0]) {
       return (
@@ -47,15 +48,15 @@ export default function DropDownView(props) {
           justifyContent: "center",
         }}
       >
-        <TirtiaryButton action={props.activeState.alcohol[1]}>
+        <TirtiaryButton action={props.activeState.alcohol[1]} style={props.activeState.alcohol[0] ? {border: "2px solid rgb(162, 123, 177)", backgroundColor: "transparent", color: "whitesmoke"} : null}>
           Choose Alcohol
         </TirtiaryButton>
         <Spacer size={3} />
-        <TirtiaryButton action={props.activeState.mixer[1]}>
+        <TirtiaryButton action={props.activeState.mixer[1]} style={props.activeState.mixer[0] ? {border: "2px solid rgb(162, 123, 177)", backgroundColor: "transparent", color: "whitesmoke"} : null}>
           Choose Mixer
         </TirtiaryButton>
         <Spacer size={3} />
-        <TirtiaryButton action={props.activeState.flavour[1]}>
+        <TirtiaryButton action={props.activeState.flavour[1]} style={props.activeState.flavour[0] ? {border: "2px solid rgb(162, 123, 177)", backgroundColor: "transparent", color: "whitesmoke"} : null}>
           Choose Flavour
         </TirtiaryButton>
         <Spacer size={3} />

@@ -5,6 +5,7 @@ import Textfield from "@mui/material/TextField";
 import Spacer from "../components/Spacer";
 import { METAText } from "../components/TextBodies";
 import { HeadingFour } from "../components/Headings";
+import { Link } from "react-router-dom";
 
 export default function SignUpView(props) {
   return (
@@ -13,6 +14,7 @@ export default function SignUpView(props) {
         <HeadingFour>Sign Up </HeadingFour>
         <Spacer size={0} />
         <METAText>Create an account </METAText>
+        
         <Spacer size={3} />
 
         <Textfield
@@ -59,9 +61,13 @@ export default function SignUpView(props) {
           color="primary"
           disabled={!props.userPassword}
           onClick={props.newUser}
-        >
+        ><Link style={{textDecoration: 'None', color: 'inherit'}} className='link' to="/">
           SIGN UP
+        </Link >
+          
         </Button>
+        <Spacer size={2} />
+        <METAText>OBS: don't use your real email and password! </METAText>
 
         <Spacer size={6} />
         <Spacer size={6} />

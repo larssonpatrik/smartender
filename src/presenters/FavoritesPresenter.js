@@ -41,21 +41,17 @@ export default function FavoritesPresenter(props) {
 
   function wasCreatedACB() {
     props.model.addObserver(observersACB);
-    console.log("COMPONENT INITIALIZED");
 
     resolvePromise(getFavoriteDrinks(), promiseState, notifyACB);
 
     function isTakenDownACB() {
       props.model.removeObserver(observersACB);
-      console.log("COMPONENT TAKEN DOWN");
     }
-
     return isTakenDownACB;
   }
 
   React.useEffect(wasCreatedACB, [favoriteArray]);
 
-  //Here props will be used instead of placeholder "drinks" const later
   return (
     <div
       style={{

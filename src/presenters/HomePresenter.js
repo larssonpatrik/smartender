@@ -13,15 +13,11 @@ import DrinkSlideShowView from "../views/DrinkSlideshowView.js";
 import CategoryCard from "../components/CategoryCard";
 import { HeadingFour } from "../components/Headings";
 import { METAText } from "../components/TextBodies";
-
-import HeaderPresenter from "./HeaderPresenter.js";
 import { getDrinkById } from "../DrinkSource";
 
 
 export default function HomePresenter(props) {
   const [testSearchPromiseState] = React.useState({});
-  const [CategoryCardPromiseState] = React.useState({});
-
   const [popularDrinksPromiseState] = React.useState({});
   const [latestDrinksPromiseState] = React.useState({});
   const [devPicksPromiseState] = React.useState({});
@@ -34,20 +30,6 @@ export default function HomePresenter(props) {
     reRender({});
   }
 
-  function clickOnDrinkCardACB(nameOfDrink) {
-    alert(nameOfDrink);
-  }
-
-  function clickOnCategoryCardACB(ingredient) {
-    resolvePromise(
-      filterDrinkByIngridient(ingredient),
-      CategoryCardPromiseState,
-      notifyACB
-    );
-    alert("Check console for result!");
-    console.log(CategoryCardPromiseState);
-  }
-
   function userInputChange(query) {
     setSearchQuery(query);
   }
@@ -58,11 +40,9 @@ export default function HomePresenter(props) {
       testSearchPromiseState,
       notifyACB
     );
-    alert("Check console for result!");
-    console.log(testSearchPromiseState);
   }
 
-  function getDevelopersPicks(props) {  
+  function getDevelopersPicks() {  
     return Promise.all(
       devPicks.map((id) => {
         return getDrinkById(id).then((obj) => obj.drinks[0]);
@@ -70,7 +50,6 @@ export default function HomePresenter(props) {
     );
   }
   
-
   React.useEffect(() => {
     resolvePromise(getPopularDrinks(), popularDrinksPromiseState, notifyACB);
 
@@ -78,8 +57,6 @@ export default function HomePresenter(props) {
 
     resolvePromise(getDevelopersPicks(), devPicksPromiseState, notifyACB);
   }, []);
-
-  
 
   return (
     <div
@@ -111,20 +88,17 @@ export default function HomePresenter(props) {
         <CategoryCard
           name="Rum"
           img="https://studyfinds.org/wp-content/uploads/2022/11/AdobeStock_375404788_Editorial_Use_Only-scaled.jpeg"
-          onClickCard={clickOnCategoryCardACB}
         />
         <Spacer size={6} />
         <CategoryCard
           name="Gin"
           img="https://mir-s3-cdn-cf.behance.net/project_modules/fs/d3861425776209.5634a914d94d5.jpg"
-          onClickCard={clickOnCategoryCardACB}
         />
         <Spacer size={6} />
 
         <CategoryCard
           name="Vodka"
           img="https://megaricos.com/wp-content/uploads/2021/04/shutterstock_653237029.jpg"
-          onClickCard={clickOnCategoryCardACB}
         />
       </div>
       <Spacer size={6} />
@@ -132,7 +106,6 @@ export default function HomePresenter(props) {
         <DrinkSlideShowView
           title="Popular Drinks"
           data={popularDrinksPromiseState.data}
-          clickOnCard={clickOnDrinkCardACB}
         />
       )}
 
@@ -141,7 +114,6 @@ export default function HomePresenter(props) {
         <DrinkSlideShowView
           title="New kids on the block"
           data={latestDrinksPromiseState.data}
-          clickOnCard={clickOnDrinkCardACB}
         />
       )}
       <Spacer size={3} />
@@ -150,7 +122,6 @@ export default function HomePresenter(props) {
         <DrinkSlideShowView
           title="Developers picks"
           data={{drinks: devPicksPromiseState.data}}
-          clickOnCard={clickOnDrinkCardACB}
         />
       )}
     </div>
