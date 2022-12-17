@@ -15,7 +15,7 @@ import SignInPresenter from "./presenters/SignInPresenter";
 import SignUpPresenter from "./presenters/SignUpPresenter";
 import FavoritesPresenter from "./presenters/FavoritesPresenter.js";
 import FooterView from "./views/FooterView.js";
-import NotSignedInView from "./views/NotSignedInView.js";
+import NotFoundPresenter from "./presenters/NotFoundPresenter.js";
 
 function App(props) {
   return (
@@ -54,11 +54,7 @@ function App(props) {
           path="/signup"
           element={<SignUpPresenter model={props.model} />}
         ></Route>
-        <Route
-          path="*"
-          element={<HeadingFour>DU ÄR BARSTOPPAD</HeadingFour>}
-        ></Route>
-        NotSignedInView
+        <Route path="*" element={<NotFoundPresenter />}></Route>
       </Routes>
       <FooterView />
     </>
