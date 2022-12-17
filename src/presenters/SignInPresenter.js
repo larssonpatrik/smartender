@@ -5,6 +5,8 @@ import firebaseConfig from "../firebaseConfig";
 import "../components/css/Signup.css";
 import "../components/css/Button.css";
 import SignInView from "../views/SignInView";
+import { getFavoriteDrinksFromFirebase } from "../firebaseModel";
+
 const app = initializeApp(firebaseConfig);
 
 export default function SignInPresenter(props) {
@@ -20,8 +22,8 @@ export default function SignInPresenter(props) {
   }
 
   function signInUserInFirebaseACB(event) {
-    event.preventDefault();
     const auth = getAuth();
+    event.preventDefault();
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
