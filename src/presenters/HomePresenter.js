@@ -12,10 +12,8 @@ import { SearchForm } from "../components/SerchForm";
 import Spacer from "../components/Spacer";
 import DrinkSlideShowView from "../views/DrinkSlideshowView.js";
 import CategoryCard from "../components/CategoryCard";
-import BarPhoto from "../images/BarPhoto.png";
-import { HeadingOne, HeadingFour } from "../components/Headings";
+import { HeadingFour } from "../components/Headings";
 import { METAText } from "../components/TextBodies";
-import HeaderPresenter from "./HeaderPresenter.js";
 
 export default function HomePresenter(props) {
   const [testSearchPromiseState] = React.useState({});
@@ -81,7 +79,7 @@ export default function HomePresenter(props) {
       <Spacer size={0} />
       <METAText style={{ textAlign: "center" }}>
         An extensive collection of drink recipes online. Here you will find
-        recipes for simple and good drinks and cocktails.
+        recipes for simple and tasty drinks and cocktails.
       </METAText>
       <Spacer size={6} />
       <div

@@ -1,7 +1,5 @@
-import { getDrinkById } from "./DrinkSource";
-import UserModel from "./UserModel";
 import firebaseConfig from "./firebaseConfig";
-import { getDatabase, ref, set, onValue, get } from "firebase/database";
+import { getDatabase, ref, set, onValue } from "firebase/database";
 import { initializeApp } from "firebase/app";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
@@ -11,6 +9,7 @@ const db = getDatabase(app);
 function signInUserInFirebase(event, email, password) {
   event.preventDefault();
   const auth = getAuth();
+
   signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       const user = userCredential.user;

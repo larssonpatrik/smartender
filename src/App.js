@@ -1,7 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import { Route, Routes } from "react-router-dom";
-import "./App.css";
-
 import HomePresenter from "./presenters/HomePresenter";
 import HeaderPresenter from "./presenters/HeaderPresenter.js";
 import Spacer from "./components/Spacer";
@@ -10,12 +8,11 @@ import RandomizePresenter from "./presenters/RandomizePresenter.js";
 import AdvancedSearchPresenter from "./presenters/AdvancedSearchPresenter";
 import SearchResultsPresenter from "./presenters/SearchResultsPresenter";
 import CategoryResultsPresenter from "./presenters/CategoryResultPresenter";
-import { HeadingFour } from "./components/Headings";
 import SignInPresenter from "./presenters/SignInPresenter";
 import SignUpPresenter from "./presenters/SignUpPresenter";
 import FavoritesPresenter from "./presenters/FavoritesPresenter.js";
 import FooterView from "./views/FooterView.js";
-import NotSignedInView from "./views/NotSignedInView.js";
+import NotFoundPresenter from "./presenters/NotFoundPresenter.js";
 
 function App(props) {
   return (
@@ -54,11 +51,7 @@ function App(props) {
           path="/signup"
           element={<SignUpPresenter model={props.model} />}
         ></Route>
-        <Route
-          path="*"
-          element={<HeadingFour>DU ÄR BARSTOPPAD</HeadingFour>}
-        ></Route>
-        NotSignedInView
+        <Route path="*" element={<NotFoundPresenter />}></Route>
       </Routes>
       <FooterView />
     </>

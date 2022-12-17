@@ -12,7 +12,6 @@ import {
   addFavoriteToFirebase,
   removeFavoriteFromFirebase,
 } from "../firebaseModel";
-import { getAuth } from "firebase/auth";
 
 export default function RandomizePresenter(props) {
   const [promiseState] = React.useState({});

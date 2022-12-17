@@ -1,10 +1,8 @@
-import FavoritesView from "../views/SearchResultsView";
 import SearchResultsView from "../views/SearchResultsView";
-import React, { useState } from "react";
+import React from "react";
 import resolvePromise from "../resolvePromise";
 import { getDrinkById } from "../DrinkSource";
 import promiseNoData from "../promiseNoData";
-import { useParams } from "react-router-dom";
 import { HeadingFour } from "../components/Headings";
 import Spacer from "../components/Spacer";
 import { METAText } from "../components/TextBodies";
@@ -82,8 +80,8 @@ export default function FavoritesPresenter(props) {
       ) : (
         <div className="signForm">
           <Spacer size={4} />
-          <HeadingOne>To save and display favorites.</HeadingOne>
-          <HeadingThree>Create or login to an existing account!</HeadingThree>
+          <HeadingOne>Create or login to an existing account</HeadingOne>
+          <HeadingThree>to save and display favorites.</HeadingThree>
           <Spacer size={2} />
           <div className="btns">
             <Link className="link" to="/signin">

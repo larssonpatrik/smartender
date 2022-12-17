@@ -1,7 +1,6 @@
 import React from "react";
 import "./SignForm.css";
 import "../components/css/Headings.css";
-import { PrimaryButton } from "../components/Buttons";
 import Button from "@mui/material/Button";
 import Textfield from "@mui/material/TextField";
 import Spacer from "../components/Spacer";
@@ -23,6 +22,7 @@ export default function SignInView(props) {
           variant="filled"
           color="primary"
           size="small"
+          type="email"
           margin="dense"
           style={{
             backgroundColor: "whitesmoke",
@@ -35,6 +35,7 @@ export default function SignInView(props) {
         <Textfield
           label="Password"
           variant="filled"
+          type="password"
           color="primary"
           size="small"
           margin="dense"
@@ -61,7 +62,7 @@ export default function SignInView(props) {
           disabled={!props.userPassword}
           onClick={props.newUser}
         >
-          <Link to="/">LOG IN</Link>
+          LOG IN
         </Button>
 
         <Spacer size={6} />
