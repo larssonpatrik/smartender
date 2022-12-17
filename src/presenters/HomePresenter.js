@@ -7,7 +7,6 @@ import {
   searchDrinkByName,
 } from "../DrinkSource";
 import promiseNoData from "../promiseNoData";
-
 import { SearchForm } from "../components/SerchForm";
 import Spacer from "../components/Spacer";
 import DrinkSlideShowView from "../views/DrinkSlideshowView.js";
@@ -16,6 +15,7 @@ import BarPhoto from "../images/BarPhoto.png";
 import { HeadingOne, HeadingFour } from "../components/Headings";
 import { METAText } from "../components/TextBodies";
 import HeaderPresenter from "./HeaderPresenter.js";
+import { getDrinkById } from "../DrinkSource";
 
 export default function HomePresenter(props) {
   const [testSearchPromiseState] = React.useState({});
@@ -23,7 +23,9 @@ export default function HomePresenter(props) {
 
   const [popularDrinksPromiseState] = React.useState({});
   const [latestDrinksPromiseState] = React.useState({});
+  const [devPicksPromiseState] = React.useState({});
   const [searchQuery, setSearchQuery] = React.useState({});
+  const devPicks = ['178338', '178354', '11416', '11224', '11004', '11009', '13940', '13625', '15395', '16405'];
 
   const [, reRender] = React.useState();
 
@@ -59,11 +61,24 @@ export default function HomePresenter(props) {
     console.log(testSearchPromiseState);
   }
 
+  function getDevelopersPicks(props) {  
+    return Promise.all(
+      devPicks.map((id) => {
+        return getDrinkById(id).then((obj) => obj.drinks[0]);
+    })
+    );
+  }
+  
+
   React.useEffect(() => {
     resolvePromise(getPopularDrinks(), popularDrinksPromiseState, notifyACB);
 
     resolvePromise(getLatestDrinks(), latestDrinksPromiseState, notifyACB);
+
+    resolvePromise(getDevelopersPicks(), devPicksPromiseState, notifyACB);
   }, []);
+
+  
 
   return (
     <div
@@ -129,10 +144,11 @@ export default function HomePresenter(props) {
         />
       )}
       <Spacer size={3} />
-      {promiseNoData(latestDrinksPromiseState) || (
+      { promiseNoData(devPicksPromiseState) || (
+        console.log('data',devPicksPromiseState.data),
         <DrinkSlideShowView
           title="Developers picks"
-          data={latestDrinksPromiseState.data}
+          data={{drinks: devPicksPromiseState.data}}
           clickOnCard={clickOnDrinkCardACB}
         />
       )}

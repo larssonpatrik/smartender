@@ -4,8 +4,9 @@ import Spacer from "../components/Spacer";
 import { HeadingTwo } from "../components/Headings";
 
 export default function DrinkSlideshowView(props) {
+  console.log('drinks',props.data.drinks)
   let drinkArray = props.data.drinks;
-
+  
   function renderDrinkCardCB(drink, i) {
     return (
       <div className="DrinkCardItem" key={i}>
