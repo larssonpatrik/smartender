@@ -81,7 +81,7 @@ export default function HomePresenter(props) {
       <Spacer size={0} />
       <METAText style={{ textAlign: "center" }}>
         An extensive collection of drink recipes online. Here you will find
-        recipes for simple and good drinks and cocktails.
+        recipes for simple and tasty drinks and cocktails.
       </METAText>
       <Spacer size={6} />
       <div

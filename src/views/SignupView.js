@@ -36,6 +36,7 @@ export default function SignUpView(props) {
           label='Password'
           variant="filled"
           color="primary"
+          type="password"
           size="small"
           margin="dense"
           style={{
