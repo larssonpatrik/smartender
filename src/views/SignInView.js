@@ -62,7 +62,7 @@ export default function SignInView(props) {
           disabled={!props.userPassword}
           onClick={props.newUser}
         >
-          <Link to="/">LOG IN</Link>
+          LOG IN
         </Button>
 
         <Spacer size={6} />

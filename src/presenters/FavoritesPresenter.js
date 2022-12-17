@@ -65,8 +65,8 @@ export default function FavoritesPresenter(props) {
       ) : (
         <div className="signForm">
           <Spacer size={4} />
-          <HeadingOne>To save and display favorites.</HeadingOne>
-          <HeadingThree>Create or login to an existing account!</HeadingThree>
+          <HeadingOne>Create or login to an existing account</HeadingOne>
+          <HeadingThree>to save and display favorites.</HeadingThree>
           <Spacer size={2} />
           <div className="btns">
             <Link className="link" to="/signin">
