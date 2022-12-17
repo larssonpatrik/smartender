@@ -13,7 +13,6 @@ import SignUpPresenter from "./presenters/SignUpPresenter";
 import FavoritesPresenter from "./presenters/FavoritesPresenter.js";
 import FooterView from "./views/FooterView.js";
 import NotFoundPresenter from "./presenters/NotFoundPresenter";
-import NotSignedInView from "./views/NotSignedInView.js";
 
 function App(props) {
   return (
