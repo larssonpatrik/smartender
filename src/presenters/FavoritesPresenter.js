@@ -1,10 +1,8 @@
-import FavoritesView from "../views/SearchResultsView";
 import SearchResultsView from "../views/SearchResultsView";
-import React, { useState } from "react";
+import React from "react";
 import resolvePromise from "../resolvePromise";
 import { getDrinkById } from "../DrinkSource";
 import promiseNoData from "../promiseNoData";
-import { useParams } from "react-router-dom";
 import { HeadingFour } from "../components/Headings";
 import Spacer from "../components/Spacer";
 import { METAText } from "../components/TextBodies";
