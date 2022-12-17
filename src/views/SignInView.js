@@ -1,7 +1,6 @@
 import React from "react";
 import "./SignForm.css";
 import "../components/css/Headings.css";
-import { PrimaryButton } from "../components/Buttons";
 import Button from "@mui/material/Button";
 import Textfield from "@mui/material/TextField";
 import Spacer from "../components/Spacer";

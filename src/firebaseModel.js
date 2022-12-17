@@ -1,5 +1,3 @@
-import { getDrinkById } from "./DrinkSource";
-import UserModel from "./UserModel";
 import firebaseConfig from "./firebaseConfig";
 import { getDatabase, ref, set, onValue, get } from "firebase/database";
 import { initializeApp } from "firebase/app";

@@ -12,8 +12,7 @@ import { SearchForm } from "../components/SerchForm";
 import Spacer from "../components/Spacer";
 import DrinkSlideShowView from "../views/DrinkSlideshowView.js";
 import CategoryCard from "../components/CategoryCard";
-import BarPhoto from "../images/BarPhoto.png";
-import { HeadingOne, HeadingFour } from "../components/Headings";
+import { HeadingFour } from "../components/Headings";
 import { METAText } from "../components/TextBodies";
 import HeaderPresenter from "./HeaderPresenter.js";
 

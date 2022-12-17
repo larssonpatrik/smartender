@@ -1,7 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import { Route, Routes } from "react-router-dom";
-import "./App.css";
-
 import HomePresenter from "./presenters/HomePresenter";
 import HeaderPresenter from "./presenters/HeaderPresenter.js";
 import Spacer from "./components/Spacer";
@@ -10,7 +8,6 @@ import RandomizePresenter from "./presenters/RandomizePresenter.js";
 import AdvancedSearchPresenter from "./presenters/AdvancedSearchPresenter";
 import SearchResultsPresenter from "./presenters/SearchResultsPresenter";
 import CategoryResultsPresenter from "./presenters/CategoryResultPresenter";
-import { HeadingFour } from "./components/Headings";
 import SignInPresenter from "./presenters/SignInPresenter";
 import SignUpPresenter from "./presenters/SignUpPresenter";
 import FavoritesPresenter from "./presenters/FavoritesPresenter.js";
