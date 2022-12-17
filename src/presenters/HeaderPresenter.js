@@ -1,7 +1,7 @@
 import { getAuth } from "firebase/auth";
-import HeaderSignInView from "../views/HeaderSignInView";
-import HeaderSignedInView from "../views/HeaderSignedInView";
+import HeaderView from "../views/HeaderView";
 import React, { useState, useEffect } from "react";
+
 export default function HeaderPresenter(props) {
   const [user, setUser] = useState(null);
 
@@ -20,17 +20,14 @@ export default function HeaderPresenter(props) {
     };
   }, []);
 
-  if (user) {
-    return (
-      <div>
-        <HeaderSignedInView />
-      </div>
-    );
-  } else {
-    return (
-      <div>
-        <HeaderSignInView />
-      </div>
-    );
+  function signOutACB() {
+    const auth = getAuth();
+    auth.signOut();
   }
+
+  return (
+    <div>
+      <HeaderView signOutFunc={signOutACB} userState={user} />
+    </div>
+  );
 }

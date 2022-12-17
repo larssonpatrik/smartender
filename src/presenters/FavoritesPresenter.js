@@ -10,6 +10,9 @@ import Spacer from "../components/Spacer";
 import { METAText } from "../components/TextBodies";
 import { getAuth } from "firebase/auth";
 import { getFavoriteDrinksFromFirebase } from "../firebaseModel";
+import { HeadingOne, HeadingThree } from "../components/Headings";
+import { PrimaryButton, SecondaryButton } from "../components/Buttons";
+import { Link } from "react-router-dom";
 
 export default function FavoritesPresenter(props) {
   const [promiseState] = React.useState({});
@@ -17,12 +20,15 @@ export default function FavoritesPresenter(props) {
 
   const [, reRender] = React.useState();
 
+  const user = getAuth().currentUser;
+
   function notifyACB() {
     reRender({});
   }
 
   function getFavoriteDrinks() {
     getFavoriteDrinksFromFirebase(props.model);
+
     return Promise.all(
       props.model.favoriteDrinks.map((id) => {
         return getDrinkById(id).then((obj) => obj.drinks[0]);
@@ -31,7 +37,9 @@ export default function FavoritesPresenter(props) {
   }
 
   React.useEffect(() => {
-    resolvePromise(getFavoriteDrinks(), promiseState, notifyACB);
+    if (user) {
+      resolvePromise(getFavoriteDrinks(), promiseState, notifyACB);
+    }
   }, []);
 
   //Here props will be used instead of placeholder "drinks" const later
@@ -52,8 +60,27 @@ export default function FavoritesPresenter(props) {
         Your absolute favorite drinks!
       </METAText>
       <Spacer size={3} />
-      {promiseNoData(promiseState) || (
-        <SearchResultsView drinks={promiseState.data} />
+      {user ? (
+        promiseNoData(promiseState) || (
+          <SearchResultsView drinks={promiseState.data} />
+        )
+      ) : (
+        <div className="signForm">
+          <Spacer size={4} />
+          <HeadingOne>To save and display favorites.</HeadingOne>
+          <HeadingThree>Create or login to an existing account!</HeadingThree>
+          <Spacer size={2} />
+          <div className="btns">
+            <Link className="link" to="/signin">
+              <SecondaryButton>Log in</SecondaryButton>
+            </Link>
+            <Spacer size={2} />
+            <Link className="link" to="/signup">
+              <PrimaryButton>Sign up</PrimaryButton>
+            </Link>
+            <Spacer size={4} />
+          </div>
+        </div>
       )}
     </div>
   );

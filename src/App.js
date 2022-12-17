@@ -58,6 +58,7 @@ function App(props) {
           path="*"
           element={<HeadingFour>DU ÄR BARSTOPPAD</HeadingFour>}
         ></Route>
+        NotSignedInView
       </Routes>
       <FooterView />
     </>

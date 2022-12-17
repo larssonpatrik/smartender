@@ -1,4 +1,3 @@
-//npm install react-icons --save
 import { Link } from "react-router-dom";
 import React, { useState } from "react";
 import { BiSearch, BiHeart, BiDrink, BiHome } from "react-icons/bi";
@@ -9,7 +8,7 @@ import Spacer from "../components/Spacer";
 import { PrimaryButton, SecondaryButton } from "../components/Buttons";
 import { HeadingThree } from "../components/Headings";
 
-export default function HeaderSingInView(props) {
+export default function HeaderView(props) {
   return (
     <div style={{ display: "flex", justifyContent: "center" }}>
       <div className="Header">
@@ -47,13 +46,28 @@ export default function HeaderSingInView(props) {
           </div>
         </div>
         <div className="btns">
-          <Link className="link" to="/signin">
-            <SecondaryButton>Log in</SecondaryButton>
-          </Link>
-          <Spacer size={2} />
-          <Link className="link" to="/signup">
-            <PrimaryButton>Sign up</PrimaryButton>
-          </Link>
+          <>
+            {props.userState ? (
+              <>
+                <Spacer size={2} />
+                <Link className="link" to="/">
+                  <PrimaryButton action={props.signOutFunc}>
+                    log out
+                  </PrimaryButton>
+                </Link>
+              </>
+            ) : (
+              <>
+                <Link className="link" to="/signin">
+                  <SecondaryButton>Log in</SecondaryButton>
+                </Link>
+                <Spacer size={2} />
+                <Link className="link" to="/signup">
+                  <PrimaryButton>Sign up</PrimaryButton>
+                </Link>
+              </>
+            )}
+          </>
         </div>
       </div>
     </div>
