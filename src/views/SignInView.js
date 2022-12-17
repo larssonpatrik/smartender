@@ -6,7 +6,6 @@ import Textfield from "@mui/material/TextField";
 import Spacer from "../components/Spacer";
 import { HeadingFour } from "../components/Headings";
 import { METAText } from "../components/TextBodies";
-import { Link } from "react-router-dom";
 
 export default function SignInView(props) {
   return (

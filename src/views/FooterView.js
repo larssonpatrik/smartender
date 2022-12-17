@@ -1,7 +1,7 @@
 import React from "react";
 import Spacer from "../components/Spacer";
 import { METAText } from "../components/TextBodies";
-import { HeadingFour, HeadingThree } from "../components/Headings";
+import { HeadingThree } from "../components/Headings";
 import "./FooterView.css";
 
 export default function FooterView(props) {
@@ -18,8 +18,7 @@ export default function FooterView(props) {
         Developed by Felicia Atterling, Greta Jonsson, Patrik Larsson and Samuel
         Ribaric
       </METAText>
-      <METAText>
-      API: TheCocktailDB.com </METAText>
+      <METAText>API: TheCocktailDB.com </METAText>
     </div>
   );
 }
