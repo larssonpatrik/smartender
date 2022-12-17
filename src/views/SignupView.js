@@ -19,6 +19,7 @@ export default function SignUpView(props) {
           label="Email"
           variant="filled"
           color="primary"
+          type="email"
           size="small"
           margin="dense"
           style={{

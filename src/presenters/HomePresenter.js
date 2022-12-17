@@ -14,7 +14,6 @@ import DrinkSlideShowView from "../views/DrinkSlideshowView.js";
 import CategoryCard from "../components/CategoryCard";
 import { HeadingFour } from "../components/Headings";
 import { METAText } from "../components/TextBodies";
-import HeaderPresenter from "./HeaderPresenter.js";
 
 export default function HomePresenter(props) {
   const [testSearchPromiseState] = React.useState({});
