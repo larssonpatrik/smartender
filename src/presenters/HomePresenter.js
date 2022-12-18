@@ -15,14 +15,24 @@ import { HeadingFour } from "../components/Headings";
 import { METAText } from "../components/TextBodies";
 import { getDrinkById } from "../DrinkSource";
 
-
 export default function HomePresenter(props) {
   const [testSearchPromiseState] = React.useState({});
   const [popularDrinksPromiseState] = React.useState({});
   const [latestDrinksPromiseState] = React.useState({});
   const [devPicksPromiseState] = React.useState({});
   const [searchQuery, setSearchQuery] = React.useState({});
-  const devPicks = ['178338', '178354', '11416', '11224', '11004', '11009', '13940', '13625', '15395', '16405'];
+  const devPicks = [
+    "178338",
+    "178354",
+    "11416",
+    "11224",
+    "11004",
+    "11009",
+    "13940",
+    "13625",
+    "15395",
+    "16405",
+  ];
 
   const [, reRender] = React.useState();
 
@@ -42,14 +52,14 @@ export default function HomePresenter(props) {
     );
   }
 
-  function getDevelopersPicks() {  
+  function getDevelopersPicks() {
     return Promise.all(
       devPicks.map((id) => {
         return getDrinkById(id).then((obj) => obj.drinks[0]);
-    })
+      })
     );
   }
-  
+
   React.useEffect(() => {
     resolvePromise(getPopularDrinks(), popularDrinksPromiseState, notifyACB);
 
@@ -117,13 +127,13 @@ export default function HomePresenter(props) {
         />
       )}
       <Spacer size={3} />
-      { promiseNoData(devPicksPromiseState) || (
-        console.log('data',devPicksPromiseState.data),
+      {promiseNoData(devPicksPromiseState) || (
         <DrinkSlideShowView
           title="Developers picks"
-          data={{drinks: devPicksPromiseState.data}}
+          data={{ drinks: devPicksPromiseState.data }}
         />
       )}
+      <Spacer size={4} />
     </div>
   );
 }

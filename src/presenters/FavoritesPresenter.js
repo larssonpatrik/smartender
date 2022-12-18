@@ -41,7 +41,7 @@ export default function FavoritesPresenter(props) {
 
   function wasCreatedACB() {
     props.model.addObserver(observersACB);
-  
+
     resolvePromise(getFavoriteDrinks(), promiseState, notifyACB);
 
     function isTakenDownACB() {
@@ -49,7 +49,7 @@ export default function FavoritesPresenter(props) {
     }
     return isTakenDownACB;
   }
-  
+
   React.useEffect(wasCreatedACB, [favoriteArray]);
 
   return (
@@ -70,14 +70,29 @@ export default function FavoritesPresenter(props) {
       </METAText>
       <Spacer size={3} />
       {user ? (
-        promiseNoData(promiseState) || (
+        promiseNoData(promiseState) ||
+        (promiseState.data.length !== 0 ? (
           <SearchResultsView drinks={promiseState.data} />
-        )
+        ) : (
+          <>
+            <Spacer size={4} />
+            <HeadingOne>You currently have no favorites!</HeadingOne>
+            <Spacer size={0} />
+            <METAText>
+              Let's change that! Click on the heart icon on any drink to add to
+              your favorites!
+            </METAText>
+          </>
+        ))
       ) : (
         <div className="signForm">
           <Spacer size={4} />
-          <HeadingOne>To save and display favorites.</HeadingOne>
-          <HeadingThree>Create or login to an existing account!</HeadingThree>
+          <HeadingOne>Please log in!</HeadingOne>
+          <Spacer size={0} />
+          <HeadingThree>
+            Create or login to an existing account to save and display
+            favorites!
+          </HeadingThree>
           <Spacer size={2} />
           <div className="btns">
             <Link className="link" to="/signin">

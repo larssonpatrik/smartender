@@ -6,7 +6,7 @@ export default function CategoryCard(props) {
   const navigate = useNavigate();
 
   function onUserClickOnCardACB() {
-    props.clickOnCard(navigate("/categoryResult/" + props.name));
+    navigate("/categoryResult/" + props.name);
   }
 
   return (
