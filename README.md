@@ -2,7 +2,7 @@
 
 Group: 55 Greta Jonsson, Patrik Larsson, Samuel Ribaric, Felicia Atterling
 
-## Deployed version:
+### Deployed version:
 https://smartender-a52c9.web.app/
 
 ## Description of project
