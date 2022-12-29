@@ -2,6 +2,9 @@
 
 Group: 55 Greta Jonsson, Patrik Larsson, Samuel Ribaric, Felicia Atterling
 
+## Deployed version:
+https://smartender-a52c9.web.app/
+
 ## Description of project
 
 Smartender is an app for hobby bartenders. The smartender webapp allows users to search for drinks, browse through categories, get a randomized drink suggestion and be able to search for drinks based on ingredients you already have at home. Users can sign up and save their favorite drinks to come back to whenever they whould like. 
