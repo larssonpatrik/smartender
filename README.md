@@ -1,6 +1,7 @@
 # Smartender
 
-Group: 55 Greta Jonsson, Patrik Larsson, Samuel Ribaric, Felicia Atterling
+#### Group 55: 
+Greta Jonsson, Patrik Larsson, Samuel Ribaric, Felicia Atterling
 
 ### Deployed version:
 https://smartender-a52c9.web.app/
